@@ -1,0 +1,30 @@
+{
+    "name": "php-fhir/resources",
+    "description": "Resource classes for the PHP implementation of the FHIR EHR specification",
+    "type": "library",
+    "license": "Apache-2.0",
+    "keywords": [
+        "php",
+        "fhir",
+        "ehr",
+        "hl7",
+        "php-fhir"
+    ],
+    "homepage": "https://github.com/dcarbone/php-fhir-resources.git",
+    "authors": [
+        {
+            "name": "Daniel Carbone",
+            "email": "daniel.p.carbone@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "php-fhir/common": "1.0.*",
+        "php-fhir/elements": "0.0.0.82.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FHIR\\Resources\\": "src/"
+        }
+    }
+}
