@@ -20,7 +20,7 @@
     "require": {
         "php": ">=5.3.3",
         "php-fhir/common": "1.0.*",
-        "php-fhir/elements": "0.0.0.82.*"
+        "php-fhir/elements": "0.0.82.*"
     },
     "autoload": {
         "psr-4": {
