@@ -19,7 +19,9 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "php-fhir/common": "1.0.*",
+        "php-fhir/common": "1.0.*"
+    },
+    "require-dev": {
         "php-fhir/elements": "0.0.82.*"
     },
     "autoload": {
