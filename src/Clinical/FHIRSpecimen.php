@@ -9,10 +9,10 @@ use FHIR\Resources\Administrative\FHIRDevice;
 use FHIR\Resources\Administrative\FHIRGroup;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRSubstance;
-use FHIR\Resources\Clinical\Specimen\FHIRCollection;
-use FHIR\Resources\Clinical\Specimen\FHIRContainer;
-use FHIR\Resources\Clinical\Specimen\FHIRSource;
-use FHIR\Resources\Clinical\Specimen\FHIRTreatment;
+use FHIR\Resources\Clinical\Specimen\FHIRSpecimenCollection;
+use FHIR\Resources\Clinical\Specimen\FHIRSpecimenContainer;
+use FHIR\Resources\Clinical\Specimen\FHIRSpecimenSource;
+use FHIR\Resources\Clinical\Specimen\FHIRSpecimenTreatment;
 
 /**
  * Class FHIRSpecimen
@@ -32,16 +32,16 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
     /** @var FHIRDateTime */
     protected $receivedTime = null;
 
-    /** @var FHIRSource[]|ResourceComponentCollection */
+    /** @var FHIRSpecimenSource[]|ResourceComponentCollection */
     protected $source;
 
-    /** @var FHIRCollection */
+    /** @var FHIRSpecimenCollection */
     protected $collection = null;
 
-    /** @var FHIRTreatment[]|ResourceComponentCollection */
+    /** @var FHIRSpecimenTreatment[]|ResourceComponentCollection */
     protected $treatment;
 
-    /** @var FHIRContainer[]|ResourceComponentCollection */
+    /** @var FHIRSpecimenContainer[]|ResourceComponentCollection */
     protected $container;
 
     /**
@@ -94,7 +94,7 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'subject',
-                'FHIRDevice, FHIRGroup, FHIRPatient, or FHIRSubstance',
+                'FHIRDevice, FHIRQuestionnaireGroup, FHIRPatient, or FHIRSubstance',
                 $subject);
         }
     }
@@ -132,7 +132,7 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRSource[]
+     * @return ResourceComponentCollection|FHIRSpecimenSource[]
      */
     public function getSource()
     {
@@ -140,15 +140,15 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRSource $source
+     * @param FHIRSpecimenSource $source
      */
-    public function addSource(FHIRSource $source)
+    public function addSource(FHIRSpecimenSource $source)
     {
         $this->source->append($source);
     }
 
     /**
-     * @return FHIRCollection
+     * @return FHIRSpecimenCollection
      */
     public function getCollection()
     {
@@ -156,15 +156,15 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRCollection $collection
+     * @param FHIRSpecimenCollection $collection
      */
-    public function setCollection(FHIRCollection $collection)
+    public function setCollection(FHIRSpecimenCollection $collection)
     {
         $this->collection = $collection;
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRTreatment[]
+     * @return ResourceComponentCollection|FHIRSpecimenTreatment[]
      */
     public function getTreatment()
     {
@@ -172,15 +172,15 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRTreatment $treatment
+     * @param FHIRSpecimenTreatment $treatment
      */
-    public function addTreatment(FHIRTreatment $treatment)
+    public function addTreatment(FHIRSpecimenTreatment $treatment)
     {
         $this->treatment->append($treatment);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRContainer[]
+     * @return ResourceComponentCollection|FHIRSpecimenContainer[]
      */
     public function getContainer()
     {
@@ -188,9 +188,9 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRContainer $container
+     * @param FHIRSpecimenContainer $container
      */
-    public function addContainer(FHIRContainer $container)
+    public function addContainer(FHIRSpecimenContainer $container)
     {
         $this->container->append($container);
     }

@@ -6,8 +6,8 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\Administrative\FHIROrganization;
 use FHIR\Resources\FHIRResource;
-use FHIR\Resources\Clinical\Medication\FHIRPackage;
-use FHIR\Resources\Clinical\Medication\FHIRProduct;
+use FHIR\Resources\Clinical\Medication\FHIRMedicationPackage;
+use FHIR\Resources\Clinical\Medication\FHIRMedicationProduct;
 
 /**
  * Class FHIRMedication
@@ -30,10 +30,10 @@ class FHIRMedication extends FHIRResource
     /** @var FHIRCode */
     protected $kind = null;
 
-    /** @var FHIRPackage */
+    /** @var FHIRMedicationPackage */
     protected $package = null;
 
-    /** @var FHIRProduct */
+    /** @var FHIRMedicationProduct */
     protected $product = null;
 
     /**
@@ -117,7 +117,7 @@ class FHIRMedication extends FHIRResource
     }
 
     /**
-     * @return FHIRPackage
+     * @return FHIRMedicationPackage
      */
     public function getPackage()
     {
@@ -125,15 +125,15 @@ class FHIRMedication extends FHIRResource
     }
 
     /**
-     * @param \FHIR\Resources\Clinical\Medication\FHIRPackage $package
+     * @param \FHIR\Resources\Clinical\Medication\FHIRMedicationPackage $package
      */
-    public function setPackage(FHIRPackage $package)
+    public function setPackage(FHIRMedicationPackage $package)
     {
         $this->package = $package;
     }
 
     /**
-     * @return FHIRProduct
+     * @return FHIRMedicationProduct
      */
     public function getProduct()
     {
@@ -141,9 +141,9 @@ class FHIRMedication extends FHIRResource
     }
 
     /**
-     * @param \FHIR\Resources\Clinical\Medication\FHIRProduct $product
+     * @param \FHIR\Resources\Clinical\Medication\FHIRMedicationProduct $product
      */
-    public function setProduct(FHIRProduct $product)
+    public function setProduct(FHIRMedicationProduct $product)
     {
         $this->product = $product;
     }

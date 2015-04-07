@@ -7,7 +7,7 @@ use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
 use FHIR\Resources\Administrative\FHIRRelatedPerson;
-use FHIR\Resources\Clinical\Questionnaire\FHIRGroup;
+use FHIR\Resources\Clinical\Questionnaire\FHIRQuestionnaireGroup;
 use FHIR\Resources\Administrative\FHIREncounter;
 
 /**
@@ -34,7 +34,7 @@ class FHIRQuestionnaire extends AbstractFHIRIdentifiableResource
     /** @var \FHIR\Resources\Administrative\FHIREncounter */
     protected $encounter = null;
 
-    /** @var FHIRGroup */
+    /** @var FHIRQuestionnaireGroup */
     protected $group = null;
 
     /**
@@ -149,7 +149,7 @@ class FHIRQuestionnaire extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return FHIRGroup
+     * @return FHIRQuestionnaireGroup
      */
     public function getGroup()
     {
@@ -157,9 +157,9 @@ class FHIRQuestionnaire extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRGroup $group
+     * @param FHIRQuestionnaireGroup $group
      */
-    public function setGroup(FHIRGroup $group)
+    public function setGroup(FHIRQuestionnaireGroup $group)
     {
         $this->group = $group;
     }

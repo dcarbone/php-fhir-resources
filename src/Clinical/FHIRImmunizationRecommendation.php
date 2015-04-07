@@ -3,7 +3,7 @@
 use FHIR\Common\Collection\ResourceComponentCollection;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\FHIRResource;
-use FHIR\Resources\Clinical\ImmunizationRecommendation\FHIRRecommendation;
+use FHIR\Resources\Clinical\ImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation;
 
 /**
  * Class FHIRImmunizationRecommendation
@@ -14,7 +14,7 @@ class FHIRImmunizationRecommendation extends FHIRResource
     /** @var FHIRPatient */
     protected $subject = null;
 
-    /** @var FHIRRecommendation[]|ResourceComponentCollection */
+    /** @var FHIRImmunizationRecommendationRecommendation[]|ResourceComponentCollection */
     protected $recommendation;
 
     /**
@@ -43,7 +43,7 @@ class FHIRImmunizationRecommendation extends FHIRResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRRecommendation[]
+     * @return ResourceComponentCollection|FHIRImmunizationRecommendationRecommendation[]
      */
     public function getRecommendation()
     {
@@ -51,9 +51,9 @@ class FHIRImmunizationRecommendation extends FHIRResource
     }
 
     /**
-     * @param FHIRRecommendation $recommendation
+     * @param FHIRImmunizationRecommendationRecommendation $recommendation
      */
-    public function addRecommendation(FHIRRecommendation $recommendation)
+    public function addRecommendation(FHIRImmunizationRecommendationRecommendation $recommendation)
     {
         $this->recommendation->append($recommendation);
     }

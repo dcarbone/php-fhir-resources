@@ -10,14 +10,14 @@ use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
-use FHIR\Resources\Clinical\Condition\FHIREvidence;
-use FHIR\Resources\Clinical\Condition\FHIRLocation;
-use FHIR\Resources\Clinical\Condition\FHIRRelatedItem;
-use FHIR\Resources\Clinical\Condition\FHIRStage;
+use FHIR\Resources\Clinical\Condition\FHIRConditionEvidence;
+use FHIR\Resources\Clinical\Condition\FHIRConditionLocation;
+use FHIR\Resources\Clinical\Condition\FHIRConditionRelatedItem;
+use FHIR\Resources\Clinical\Condition\FHIRConditionStage;
 use FHIR\Resources\Administrative\FHIREncounter;
 
 /**
- * Class FHIRCondition
+ * Class FHIRFamilyHistoryCondition
  * @package FHIR\Resources\Clinical
  */
 class FHIRCondition extends AbstractFHIRIdentifiableResource
@@ -58,16 +58,16 @@ class FHIRCondition extends AbstractFHIRIdentifiableResource
     /** @var FHIRString */
     protected $notes = null;
 
-    /** @var FHIRStage */
+    /** @var FHIRConditionStage */
     protected $stage = null;
 
-    /** @var FHIREvidence[]|ResourceComponentCollection */
+    /** @var FHIRConditionEvidence[]|ResourceComponentCollection */
     protected $evidence;
 
-    /** @var FHIRLocation[]|ResourceComponentCollection */
+    /** @var FHIRConditionLocation[]|ResourceComponentCollection */
     protected $location;
 
-    /** @var FHIRRelatedItem[]|ResourceComponentCollection */
+    /** @var FHIRConditionRelatedItem[]|ResourceComponentCollection */
     protected $relatedItem;
 
     /**
@@ -289,7 +289,7 @@ class FHIRCondition extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return FHIRStage
+     * @return FHIRConditionStage
      */
     public function getStage()
     {
@@ -297,15 +297,15 @@ class FHIRCondition extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRStage $stage
+     * @param FHIRConditionStage $stage
      */
-    public function setStage(FHIRStage $stage)
+    public function setStage(FHIRConditionStage $stage)
     {
         $this->stage = $stage;
     }
 
     /**
-     * @return ResourceComponentCollection|FHIREvidence[]
+     * @return ResourceComponentCollection|FHIRConditionEvidence[]
      */
     public function getEvidence()
     {
@@ -313,15 +313,15 @@ class FHIRCondition extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIREvidence $evidence
+     * @param FHIRConditionEvidence $evidence
      */
-    public function addEvidence(FHIREvidence $evidence)
+    public function addEvidence(FHIRConditionEvidence $evidence)
     {
         $this->evidence->append($evidence);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRLocation[]
+     * @return ResourceComponentCollection|FHIRConditionLocation[]
      */
     public function getLocation()
     {
@@ -329,15 +329,15 @@ class FHIRCondition extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRLocation $location
+     * @param FHIRConditionLocation $location
      */
-    public function addLocation(FHIRLocation $location)
+    public function addLocation(FHIRConditionLocation $location)
     {
         $this->location->append($location);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRRelatedItem[]
+     * @return ResourceComponentCollection|FHIRConditionRelatedItem[]
      */
     public function getRelatedItem()
     {
@@ -345,9 +345,9 @@ class FHIRCondition extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRRelatedItem $relatedItem
+     * @param FHIRConditionRelatedItem $relatedItem
      */
-    public function addRelatedItem(FHIRRelatedItem $relatedItem)
+    public function addRelatedItem(FHIRConditionRelatedItem $relatedItem)
     {
         $this->relatedItem->append($relatedItem);
     }

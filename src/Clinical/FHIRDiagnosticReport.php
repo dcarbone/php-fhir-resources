@@ -13,7 +13,7 @@ use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIROrganization;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
-use FHIR\Resources\Clinical\DiagnosticReport\FHIRImage;
+use FHIR\Resources\Clinical\DiagnosticReport\FHIRDiagnosticReportImage;
 use FHIR\Resources\Administrative\FHIRDevice;
 use FHIR\Resources\Administrative\FHIRGroup;
 use FHIR\Resources\Administrative\FHIRLocation;
@@ -66,7 +66,7 @@ class FHIRDiagnosticReport extends AbstractFHIRIdentifiableResource
     /** @var FHIRAttachment[]|ElementCollection */
     protected $presentedForm;
 
-    /** @var FHIRImage[]|ResourceComponentCollection */
+    /** @var FHIRDiagnosticReportImage[]|ResourceComponentCollection */
     protected $image;
 
     /**
@@ -156,7 +156,7 @@ class FHIRDiagnosticReport extends AbstractFHIRIdentifiableResource
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'subject',
-                'FHIRDevice, FHIRGroup, FHIRLocation, or FHIRPatient',
+                'FHIRDevice, FHIRQuestionnaireGroup, FHIRConditionLocation, or FHIRPatient',
                 $subject);
         }
     }
@@ -328,7 +328,7 @@ class FHIRDiagnosticReport extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRImage[]
+     * @return ResourceComponentCollection|FHIRDiagnosticReportImage[]
      */
     public function getImage()
     {
@@ -336,9 +336,9 @@ class FHIRDiagnosticReport extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRImage $image
+     * @param FHIRDiagnosticReportImage $image
      */
-    public function addImage(FHIRImage $image)
+    public function addImage(FHIRDiagnosticReportImage $image)
     {
         $this->image->append($image);
     }

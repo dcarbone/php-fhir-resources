@@ -11,7 +11,7 @@ use FHIR\Elements\Complex\FHIRHumanName;
 use FHIR\Elements\Complex\FHIRPeriod;
 use FHIR\Elements\Primitive\FHIRDateTime;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
-use FHIR\Resources\Administrative\Practitioner\FHIRQualification;
+use FHIR\Resources\Administrative\Practitioner\FHIRPractitionerQualification;
 
 /**
  * Class FHIRPractitioner
@@ -55,7 +55,7 @@ class FHIRPractitioner extends AbstractFHIRIdentifiableResource
     /** @var FHIRCodeableConcept[]|ElementCollection */
     protected $communication;
 
-    /** @var FHIRQualification[]|ResourceComponentCollection */
+    /** @var FHIRPractitionerQualification[]|ResourceComponentCollection */
     protected $qualification;
 
     /**
@@ -266,7 +266,7 @@ class FHIRPractitioner extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRQualification[]
+     * @return ResourceComponentCollection|FHIRPractitionerQualification[]
      */
     public function getQualification()
     {
@@ -274,9 +274,9 @@ class FHIRPractitioner extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRQualification $qualification
+     * @param FHIRPractitionerQualification $qualification
      */
-    public function addQualification(FHIRQualification $qualification)
+    public function addQualification(FHIRPractitionerQualification $qualification)
     {
         $this->qualification->append($qualification);
     }

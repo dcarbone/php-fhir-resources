@@ -6,8 +6,8 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
-use FHIR\Resources\Clinical\DiagnosticOrder\FHIREvent;
-use FHIR\Resources\Clinical\DiagnosticOrder\FHIRItem;
+use FHIR\Resources\Clinical\DiagnosticOrder\FHIRDiagnosticOrderEvent;
+use FHIR\Resources\Clinical\DiagnosticOrder\FHIRDiagnosticOrderItem;
 use FHIR\Resources\Administrative\FHIRDevice;
 use FHIR\Resources\Administrative\FHIRGroup;
 use FHIR\Resources\Administrative\FHIRLocation;
@@ -37,10 +37,10 @@ class FHIRDiagnosticOrder extends FHIRIdentifier
     /** @var FHIRCode */
     protected $priority = null;
 
-    /** @var FHIRItem[]|ResourceComponentCollection */
+    /** @var FHIRDiagnosticOrderItem[]|ResourceComponentCollection */
     protected $item;
 
-    /** @var FHIREvent[]|ResourceComponentCollection */
+    /** @var FHIRDiagnosticOrderEvent[]|ResourceComponentCollection */
     protected $event;
 
     /**
@@ -77,7 +77,7 @@ class FHIRDiagnosticOrder extends FHIRIdentifier
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'subject',
-                'FHIRDevice, FHIRGroup, FHIRLocation, or FHIRPatient',
+                'FHIRDevice, FHIRQuestionnaireGroup, FHIRConditionLocation, or FHIRPatient',
                 $subject);
         }
     }
@@ -163,7 +163,7 @@ class FHIRDiagnosticOrder extends FHIRIdentifier
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRItem[]
+     * @return ResourceComponentCollection|FHIRDiagnosticOrderItem[]
      */
     public function getItem()
     {
@@ -171,7 +171,7 @@ class FHIRDiagnosticOrder extends FHIRIdentifier
     }
 
     /**
-     * @return ResourceComponentCollection|FHIREvent[]
+     * @return ResourceComponentCollection|FHIRDiagnosticOrderEvent[]
      */
     public function getEvent()
     {
@@ -179,10 +179,10 @@ class FHIRDiagnosticOrder extends FHIRIdentifier
     }
 
     /**
-     * @param FHIRItem $item
-     * @param FHIREvent $event
+     * @param FHIRDiagnosticOrderItem $item
+     * @param FHIRDiagnosticOrderEvent $event
      */
-    public function addItemWithEvent(FHIRItem $item, FHIREvent $event)
+    public function addItemWithEvent(FHIRDiagnosticOrderItem $item, FHIRDiagnosticOrderEvent $event)
     {
         $item->addEvent($event);
         $this->item->append($item);

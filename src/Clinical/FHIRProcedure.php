@@ -8,8 +8,8 @@ use FHIR\Elements\Complex\FHIRPeriod;
 use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
-use FHIR\Resources\Clinical\Procedure\FHIRPerformer;
-use FHIR\Resources\Clinical\Procedure\FHIRRelatedItem;
+use FHIR\Resources\Clinical\Procedure\FHIRProcedurePerformer;
+use FHIR\Resources\Clinical\Procedure\FHIRProcedureRelatedItem;
 use FHIR\Resources\Administrative\FHIREncounter;
 
 /**
@@ -51,10 +51,10 @@ class FHIRProcedure extends AbstractFHIRIdentifiableResource
     /** @var FHIRString */
     protected $notes = null;
 
-    /** @var FHIRPerformer[]|ResourceComponentCollection */
+    /** @var FHIRProcedurePerformer[]|ResourceComponentCollection */
     protected $performer;
 
-    /** @var FHIRRelatedItem[]|ResourceComponentCollection */
+    /** @var FHIRProcedureRelatedItem[]|ResourceComponentCollection */
     protected $relatedItem;
 
     /**
@@ -248,7 +248,7 @@ class FHIRProcedure extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRPerformer[]
+     * @return ResourceComponentCollection|FHIRProcedurePerformer[]
      */
     public function getPerformer()
     {
@@ -256,15 +256,15 @@ class FHIRProcedure extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRPerformer $performer
+     * @param FHIRProcedurePerformer $performer
      */
-    public function addPerformer(FHIRPerformer $performer)
+    public function addPerformer(FHIRProcedurePerformer $performer)
     {
         $this->performer->append($performer);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRRelatedItem[]
+     * @return ResourceComponentCollection|FHIRProcedureRelatedItem[]
      */
     public function getRelatedItem()
     {
@@ -272,9 +272,9 @@ class FHIRProcedure extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRRelatedItem $relatedItem
+     * @param FHIRProcedureRelatedItem $relatedItem
      */
-    public function addRelatedItem(FHIRRelatedItem $relatedItem)
+    public function addRelatedItem(FHIRProcedureRelatedItem $relatedItem)
     {
         $this->relatedItem->append($relatedItem);
     }

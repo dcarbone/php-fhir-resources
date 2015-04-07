@@ -11,9 +11,9 @@ use FHIR\Elements\Primitive\FHIRBoolean;
 use FHIR\Elements\Primitive\FHIRDateTime;
 use FHIR\Elements\Primitive\FHIRInteger;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
-use FHIR\Resources\Administrative\Patient\FHIRAnimal;
+use FHIR\Resources\Administrative\Patient\FHIRPatientAnimal;
 use FHIR\Resources\Administrative\Patient\FHIRContact;
-use FHIR\Resources\Administrative\Patient\FHIRLink;
+use FHIR\Resources\Administrative\Patient\FHIRPatientLink;
 
 /**
  * Class FHIRPatient
@@ -60,10 +60,10 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     /** @var FHIRBoolean */
     protected $active = null;
 
-    /** @var FHIRAnimal */
+    /** @var FHIRPatientAnimal */
     protected $animal = null;
 
-    /** @var FHIRLink[]|ResourceComponentCollection */
+    /** @var FHIRPatientLink[]|ResourceComponentCollection */
     protected $link;
 
     /** @var FHIRContact[]|ResourceComponentCollection */
@@ -316,7 +316,7 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return FHIRAnimal
+     * @return FHIRPatientAnimal
      */
     public function getAnimal()
     {
@@ -324,15 +324,15 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRAnimal $animal
+     * @param FHIRPatientAnimal $animal
      */
-    public function setAnimal(FHIRAnimal $animal)
+    public function setAnimal(FHIRPatientAnimal $animal)
     {
         $this->animal = $animal;
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRLink[]
+     * @return ResourceComponentCollection|FHIRPatientLink[]
      */
     public function getLink()
     {
@@ -340,9 +340,9 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRLink $link
+     * @param FHIRPatientLink $link
      */
-    public function addLink(FHIRLink $link)
+    public function addLink(FHIRPatientLink $link)
     {
         $this->link->append($link);
     }

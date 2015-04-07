@@ -10,7 +10,7 @@ use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
 use FHIR\Resources\Administrative\FHIRDevice;
-use FHIR\Resources\Clinical\MedicationAdministration\FHIRDosage;
+use FHIR\Resources\Clinical\MedicationAdministration\FHIRMedicationDosage;
 use FHIR\Resources\Administrative\FHIREncounter;
 
 /**
@@ -49,7 +49,7 @@ class FHIRMedicationAdministration extends AbstractFHIRIdentifiableResource
     /** @var FHIRDevice[]|ResourceCollection */
     protected $device;
 
-    /** @var FHIRDosage[]|ResourceComponentCollection */
+    /** @var FHIRMedicationDosage[]|ResourceComponentCollection */
     protected $dosage;
 
     /**
@@ -223,7 +223,7 @@ class FHIRMedicationAdministration extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return FHIRDosage[]|ResourceComponentCollection
+     * @return FHIRMedicationDosage[]|ResourceComponentCollection
      */
     public function getDosage()
     {
@@ -231,9 +231,9 @@ class FHIRMedicationAdministration extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRDosage $dosage
+     * @param FHIRMedicationDosage $dosage
      */
-    public function setDosage(FHIRDosage $dosage)
+    public function setDosage(FHIRMedicationDosage $dosage)
     {
         $this->dosage = $dosage;
     }

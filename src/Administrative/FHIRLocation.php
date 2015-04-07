@@ -5,7 +5,7 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Resources\FHIRResource;
 
 /**
- * Class FHIRLocation
+ * Class FHIRConditionLocation
  * @package FHIR\Resources\Administrative
  */
 class FHIRLocation extends FHIRResource

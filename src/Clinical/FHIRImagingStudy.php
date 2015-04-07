@@ -14,7 +14,7 @@ use FHIR\Elements\Simple\FHIROid;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
-use FHIR\Resources\Clinical\ImagingStudy\FHIRSeries;
+use FHIR\Resources\Clinical\ImagingStudy\FHIRImagingStudySeries;
 
 /**
  * Class FHIRImagingStudy
@@ -67,7 +67,7 @@ class FHIRImagingStudy extends AbstractFHIRIdentifiableResource
     /** @var FHIRString */
     protected $description = null;
 
-    /** @var FHIRSeries[]|ResourceComponentCollection */
+    /** @var FHIRImagingStudySeries[]|ResourceComponentCollection */
     protected $series;
 
     /**
@@ -322,7 +322,7 @@ class FHIRImagingStudy extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return FHIRSeries[]|ResourceComponentCollection
+     * @return FHIRImagingStudySeries[]|ResourceComponentCollection
      */
     public function getSeries()
     {
@@ -330,9 +330,9 @@ class FHIRImagingStudy extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRSeries $series
+     * @param FHIRImagingStudySeries $series
      */
-    public function addSeries(FHIRSeries $series)
+    public function addSeries(FHIRImagingStudySeries $series)
     {
         $this->series->append($series);
     }

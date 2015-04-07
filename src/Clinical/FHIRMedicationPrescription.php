@@ -7,9 +7,9 @@ use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
 use FHIR\Resources\FHIRResource;
-use FHIR\Resources\Clinical\MedicationPrescription\FHIRDispense;
-use FHIR\Resources\Clinical\MedicationPrescription\FHIRDosageInstruction;
-use FHIR\Resources\Clinical\MedicationPrescription\FHIRSubstitution;
+use FHIR\Resources\Clinical\MedicationPrescription\FHIRMedicationPrescriptionDispense;
+use FHIR\Resources\Clinical\MedicationPrescription\FHIRMedicationPrescriptionDosageInstruction;
+use FHIR\Resources\Clinical\MedicationPrescription\FHIRMedicationPrescriptionSubstitution;
 use FHIR\Resources\Administrative\FHIREncounter;
 
 /**
@@ -39,13 +39,13 @@ class FHIRMedicationPrescription extends FHIRResource
     /** @var FHIRMedication */
     protected $medication = null;
 
-    /** @var FHIRSubstitution */
+    /** @var FHIRMedicationPrescriptionSubstitution */
     protected $substitution = null;
 
-    /** @var FHIRDosageInstruction[]|ResourceComponentCollection */
+    /** @var FHIRMedicationPrescriptionDosageInstruction[]|ResourceComponentCollection */
     protected $dosageInstruction;
 
-    /** @var FHIRDispense */
+    /** @var FHIRMedicationPrescriptionDispense */
     protected $dispense = null;
 
     /**
@@ -138,7 +138,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @return FHIRCodeableConcept|\FHIR\Resources\Clinical\FamilyHistory\FHIRCondition
+     * @return FHIRCodeableConcept|\FHIR\Resources\Clinical\FamilyHistory\FHIRFamilyHistoryCondition
      */
     public function getReason()
     {
@@ -146,7 +146,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param FHIRCodeableConcept|\FHIR\Resources\Clinical\FamilyHistory\FHIRCondition $reason
+     * @param FHIRCodeableConcept|\FHIR\Resources\Clinical\FamilyHistory\FHIRFamilyHistoryCondition $reason
      */
     public function setReason($reason)
     {
@@ -159,7 +159,7 @@ class FHIRMedicationPrescription extends FHIRResource
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'reason',
-                'FHIRCodeableConcept or FHIRCondition',
+                'FHIRCodeableConcept or FHIRFamilyHistoryCondition',
                 $reason
             );
         }
@@ -182,7 +182,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @return FHIRSubstitution
+     * @return FHIRMedicationPrescriptionSubstitution
      */
     public function getSubstitution()
     {
@@ -190,15 +190,15 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param FHIRSubstitution $substitution
+     * @param FHIRMedicationPrescriptionSubstitution $substitution
      */
-    public function setSubstitution(FHIRSubstitution $substitution)
+    public function setSubstitution(FHIRMedicationPrescriptionSubstitution $substitution)
     {
         $this->substitution = $substitution;
     }
 
     /**
-     * @return FHIRDosageInstruction[]|ResourceComponentCollection
+     * @return FHIRMedicationPrescriptionDosageInstruction[]|ResourceComponentCollection
      */
     public function getDosageInstruction()
     {
@@ -206,15 +206,15 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param FHIRDosageInstruction $dosageInstruction
+     * @param FHIRMedicationPrescriptionDosageInstruction $dosageInstruction
      */
-    public function addDosageInstruction(FHIRDosageInstruction $dosageInstruction)
+    public function addDosageInstruction(FHIRMedicationPrescriptionDosageInstruction $dosageInstruction)
     {
         $this->dosageInstruction->append($dosageInstruction);
     }
 
     /**
-     * @return FHIRDispense
+     * @return FHIRMedicationPrescriptionDispense
      */
     public function getDispense()
     {
@@ -222,9 +222,9 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param \FHIR\Resources\Clinical\MedicationPrescription\FHIRDispense $dispense
+     * @param \FHIR\Resources\Clinical\MedicationPrescription\FHIRMedicationPrescriptionDispense $dispense
      */
-    public function setDispense(FHIRDispense $dispense)
+    public function setDispense(FHIRMedicationPrescriptionDispense $dispense)
     {
         $this->dispense = $dispense;
     }

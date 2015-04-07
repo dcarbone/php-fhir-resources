@@ -6,8 +6,8 @@ use FHIR\Elements\Primitive\FHIRDateTime;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
-use FHIR\Resources\Clinical\AdverseReaction\FHIRExposure;
-use FHIR\Resources\Clinical\AdverseReaction\FHIRSymptom;
+use FHIR\Resources\Clinical\AdverseReaction\FHIRAdverseReactionExposure;
+use FHIR\Resources\Clinical\AdverseReaction\FHIRAdverseReactionSymptom;
 
 /**
  * Class FHIRAdverseReaction
@@ -27,10 +27,10 @@ class FHIRAdverseReaction extends AbstractFHIRIdentifiableResource
     /** @var \FHIR\Resources\Administrative\FHIRPractitioner|FHIRPatient */
     protected $recorder = null;
 
-    /** @var FHIRSymptom[]|ResourceComponentCollection */
+    /** @var FHIRAdverseReactionSymptom[]|ResourceComponentCollection */
     protected $symptom;
 
-    /** @var FHIRExposure[]|ResourceComponentCollection */
+    /** @var FHIRAdverseReactionExposure[]|ResourceComponentCollection */
     protected $exposure;
 
     /**
@@ -111,7 +111,7 @@ class FHIRAdverseReaction extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRSymptom[]
+     * @return ResourceComponentCollection|FHIRAdverseReactionSymptom[]
      */
     public function getSymptom()
     {
@@ -119,15 +119,15 @@ class FHIRAdverseReaction extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRSymptom $symptom
+     * @param FHIRAdverseReactionSymptom $symptom
      */
-    public function addSymptom(FHIRSymptom $symptom)
+    public function addSymptom(FHIRAdverseReactionSymptom $symptom)
     {
         $this->symptom->append($symptom);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRExposure[]
+     * @return ResourceComponentCollection|FHIRAdverseReactionExposure[]
      */
     public function getExposure()
     {
@@ -135,9 +135,9 @@ class FHIRAdverseReaction extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRExposure $exposure
+     * @param FHIRAdverseReactionExposure $exposure
      */
-    public function setExposure(FHIRExposure $exposure)
+    public function setExposure(FHIRAdverseReactionExposure $exposure)
     {
         $this->exposure->append($exposure);
     }

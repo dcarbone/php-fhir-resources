@@ -9,7 +9,7 @@ use FHIR\Elements\Complex\FHIRHumanName;
 use FHIR\Resources\Administrative\FHIROrganization;
 
 /**
- * Class FHIRContact
+ * Class FHIROrganizationContact
  * @package FHIR\Resources\Administrative\Patient
  */
 class FHIRContact extends AbstractFHIRObject

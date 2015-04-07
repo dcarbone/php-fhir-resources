@@ -12,9 +12,9 @@ use FHIR\Resources\Administrative\FHIROrganization;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
 use FHIR\Resources\Administrative\FHIRLocation;
-use FHIR\Resources\Clinical\Immunization\FHIRExplanation;
-use FHIR\Resources\Clinical\Immunization\FHIRReaction;
-use FHIR\Resources\Clinical\Immunization\FHIRVaccinationProtocol;
+use FHIR\Resources\Clinical\Immunization\FHIRImmunizationExplanation;
+use FHIR\Resources\Clinical\Immunization\FHIRImmunizationReaction;
+use FHIR\Resources\Clinical\Immunization\FHIRImmunizationVaccinationProtocol;
 
 /**
  * Class FHIRImmunization
@@ -64,13 +64,13 @@ class FHIRImmunization extends AbstractFHIRIdentifiableResource
     /** @var FHIRQuantity */
     protected $doseQuantity = null;
 
-    /** @var FHIRExplanation */
+    /** @var FHIRImmunizationExplanation */
     protected $explanation = null;
 
-    /** @var FHIRVaccinationProtocol[]|ResourceComponentCollection */
+    /** @var FHIRImmunizationVaccinationProtocol[]|ResourceComponentCollection */
     protected $vaccinationProtocol;
 
-    /** @var FHIRReaction[]|ResourceComponentCollection */
+    /** @var FHIRImmunizationReaction[]|ResourceComponentCollection */
     protected $reaction;
 
     /**
@@ -308,7 +308,7 @@ class FHIRImmunization extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return FHIRExplanation
+     * @return FHIRImmunizationExplanation
      */
     public function getExplanation()
     {
@@ -316,15 +316,15 @@ class FHIRImmunization extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRExplanation $explanation
+     * @param FHIRImmunizationExplanation $explanation
      */
-    public function setExplanation(FHIRExplanation $explanation)
+    public function setExplanation(FHIRImmunizationExplanation $explanation)
     {
         $this->explanation = $explanation;
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRVaccinationProtocol[]
+     * @return ResourceComponentCollection|FHIRImmunizationVaccinationProtocol[]
      */
     public function getVaccinationProtocol()
     {
@@ -332,15 +332,15 @@ class FHIRImmunization extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRVaccinationProtocol $vaccinationProtocol
+     * @param FHIRImmunizationVaccinationProtocol $vaccinationProtocol
      */
-    public function addVaccinationProtocol(FHIRVaccinationProtocol $vaccinationProtocol)
+    public function addVaccinationProtocol(FHIRImmunizationVaccinationProtocol $vaccinationProtocol)
     {
         $this->vaccinationProtocol->append($vaccinationProtocol);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRReaction[]
+     * @return ResourceComponentCollection|FHIRImmunizationReaction[]
      */
     public function getReaction()
     {
@@ -348,9 +348,9 @@ class FHIRImmunization extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRReaction $reaction
+     * @param FHIRImmunizationReaction $reaction
      */
-    public function addReaction(FHIRReaction $reaction)
+    public function addReaction(FHIRImmunizationReaction $reaction)
     {
         $this->reaction->append($reaction);
     }

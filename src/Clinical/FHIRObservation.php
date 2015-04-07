@@ -16,8 +16,8 @@ use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIROrganization;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
-use FHIR\Resources\Clinical\Observation\FHIRReferenceRange;
-use FHIR\Resources\Clinical\Observation\FHIRRelated;
+use FHIR\Resources\Clinical\Observation\FHIRObservationReferenceRange;
+use FHIR\Resources\Clinical\Observation\FHIRObservationRelated;
 use FHIR\Resources\Administrative\FHIRDevice;
 use FHIR\Resources\Administrative\FHIRGroup;
 use FHIR\Resources\Administrative\FHIRLocation;
@@ -67,10 +67,10 @@ class FHIRObservation extends AbstractFHIRIdentifiableResource
     /** @var FHIRPractitioner[]|FHIRDevice[]|FHIROrganization[]|ResourceCollection */
     protected $performer;
 
-    /** @var FHIRRelated[]|ResourceComponentCollection */
+    /** @var FHIRObservationRelated[]|ResourceComponentCollection */
     protected $related;
 
-    /** @var FHIRReferenceRange[]|ResourceComponentCollection */
+    /** @var FHIRObservationReferenceRange[]|ResourceComponentCollection */
     protected $referenceRange;
 
     /**
@@ -287,7 +287,7 @@ class FHIRObservation extends AbstractFHIRIdentifiableResource
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'subject',
-                'FHIRDevice, FHIRGroup, FHIRLocation, or FHIRPatient',
+                'FHIRDevice, FHIRQuestionnaireGroup, FHIRConditionLocation, or FHIRPatient',
                 $subject);
         }
     }
@@ -337,7 +337,7 @@ class FHIRObservation extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRRelated[]
+     * @return ResourceComponentCollection|FHIRObservationRelated[]
      */
     public function getRelated()
     {
@@ -345,15 +345,15 @@ class FHIRObservation extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRRelated $related
+     * @param FHIRObservationRelated $related
      */
-    public function addRelated(FHIRRelated $related)
+    public function addRelated(FHIRObservationRelated $related)
     {
         $this->related->append($related);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRReferenceRange[]
+     * @return ResourceComponentCollection|FHIRObservationReferenceRange[]
      */
     public function getReferenceRange()
     {
@@ -361,9 +361,9 @@ class FHIRObservation extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRReferenceRange $referenceRange
+     * @param FHIRObservationReferenceRange $referenceRange
      */
-    public function setReferenceRange(FHIRReferenceRange $referenceRange)
+    public function setReferenceRange(FHIRObservationReferenceRange $referenceRange)
     {
         $this->referenceRange->append($referenceRange);
     }

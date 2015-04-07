@@ -6,7 +6,7 @@ use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRDevice;
 use FHIR\Resources\Administrative\FHIRLocation;
 use FHIR\Resources\Administrative\FHIRPatient;
-use FHIR\Resources\Clinical\DeviceObservationReport\FHIRVirtualDevice;
+use FHIR\Resources\Clinical\DeviceObservationReport\FHIRDeviceObservationReportVirtualDevice;
 
 /**
  * Class FHIRDeviceObservationReport
@@ -23,7 +23,7 @@ class FHIRDeviceObservationReport extends AbstractFHIRIdentifiableResource
     /** @var FHIRPatient|FHIRDevice|FHIRLocation */
     protected $subject = null;
 
-    /** @var FHIRVirtualDevice[]|ResourceComponentCollection */
+    /** @var FHIRDeviceObservationReportVirtualDevice[]|ResourceComponentCollection */
     protected $virtualDevice;
 
     /**
@@ -90,13 +90,13 @@ class FHIRDeviceObservationReport extends AbstractFHIRIdentifiableResource
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'subject',
-                'FHIRDevice, FHIRLocation, or FHIRPatient',
+                'FHIRDevice, FHIRConditionLocation, or FHIRPatient',
                 $subject);
         }
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRVirtualDevice[]
+     * @return ResourceComponentCollection|FHIRDeviceObservationReportVirtualDevice[]
      */
     public function getVirtualDevice()
     {
@@ -104,9 +104,9 @@ class FHIRDeviceObservationReport extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRVirtualDevice $virtualDevice
+     * @param FHIRDeviceObservationReportVirtualDevice $virtualDevice
      */
-    public function addVirtualDevice(FHIRVirtualDevice $virtualDevice)
+    public function addVirtualDevice(FHIRDeviceObservationReportVirtualDevice $virtualDevice)
     {
         $this->virtualDevice->append($virtualDevice);
     }

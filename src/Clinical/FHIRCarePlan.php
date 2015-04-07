@@ -8,9 +8,9 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
-use FHIR\Resources\Clinical\CarePlan\FHIRActivity;
-use FHIR\Resources\Clinical\CarePlan\FHIRGoal;
-use FHIR\Resources\Clinical\CarePlan\FHIRParticipant;
+use FHIR\Resources\Clinical\CarePlan\FHIRCarePlanActivity;
+use FHIR\Resources\Clinical\CarePlan\FHIRCarePlanGoal;
+use FHIR\Resources\Clinical\CarePlan\FHIRCarePlanParticipant;
 
 /**
  * Class FHIRCarePlan
@@ -38,13 +38,13 @@ class FHIRCarePlan extends AbstractFHIRIdentifiableResource
     /** @var FHIRString */
     protected $notes = null;
 
-    /** @var FHIRGoal[]|ResourceComponentCollection */
+    /** @var FHIRCarePlanGoal[]|ResourceComponentCollection */
     protected $goal;
 
-    /** @var FHIRActivity[]|ResourceComponentCollection */
+    /** @var FHIRCarePlanActivity[]|ResourceComponentCollection */
     protected $activity;
 
-    /** @var FHIRParticipant[]|ResourceComponentCollection */
+    /** @var FHIRCarePlanParticipant[]|ResourceComponentCollection */
     protected $participant;
 
     /**
@@ -156,7 +156,7 @@ class FHIRCarePlan extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRGoal[]
+     * @return ResourceComponentCollection|FHIRCarePlanGoal[]
      */
     public function getGoal()
     {
@@ -164,15 +164,15 @@ class FHIRCarePlan extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRGoal $goal
+     * @param FHIRCarePlanGoal $goal
      */
-    public function addGoal(FHIRGoal $goal)
+    public function addGoal(FHIRCarePlanGoal $goal)
     {
         $this->goal->append($goal);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRActivity[]
+     * @return ResourceComponentCollection|FHIRCarePlanActivity[]
      */
     public function getActivity()
     {
@@ -180,15 +180,15 @@ class FHIRCarePlan extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRActivity $activity
+     * @param FHIRCarePlanActivity $activity
      */
-    public function addActivity(FHIRActivity $activity)
+    public function addActivity(FHIRCarePlanActivity $activity)
     {
         $this->activity->append($activity);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRParticipant[]
+     * @return ResourceComponentCollection|FHIRCarePlanParticipant[]
      */
     public function getParticipant()
     {
@@ -196,9 +196,9 @@ class FHIRCarePlan extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRParticipant $participant
+     * @param FHIRCarePlanParticipant $participant
      */
-    public function addParticipant(FHIRParticipant $participant)
+    public function addParticipant(FHIRCarePlanParticipant $participant)
     {
         $this->participant->append($participant);
     }

@@ -6,8 +6,8 @@ use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
 use FHIR\Resources\Administrative\FHIRPractitioner;
-use FHIR\Resources\Clinical\MedicationDispense\FHIRDispense;
-use FHIR\Resources\Clinical\MedicationDispense\FHIRSubstitution;
+use FHIR\Resources\Clinical\MedicationDispense\FHIRMedicationDispenseDispense;
+use FHIR\Resources\Clinical\MedicationDispense\FHIRMedicationDispenseSubstitution;
 
 /**
  * Class FHIRMedicationDispense
@@ -27,10 +27,10 @@ class FHIRMedicationDispense extends AbstractFHIRIdentifiableResource
     /** @var FHIRMedicationPrescription[]|ResourceCollection */
     protected $authorizingPrescription;
 
-    /** @var FHIRDispense[]|ResourceComponentCollection */
+    /** @var FHIRMedicationDispenseDispense[]|ResourceComponentCollection */
     protected $dispense;
 
-    /** @var FHIRSubstitution */
+    /** @var FHIRMedicationDispenseSubstitution */
     protected $substitution = null;
 
     /**
@@ -108,7 +108,7 @@ class FHIRMedicationDispense extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRDispense[]
+     * @return ResourceComponentCollection|FHIRMedicationDispenseDispense[]
      */
     public function getDispense()
     {
@@ -116,15 +116,15 @@ class FHIRMedicationDispense extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRDispense $dispense
+     * @param FHIRMedicationDispenseDispense $dispense
      */
-    public function addDispense(FHIRDispense $dispense)
+    public function addDispense(FHIRMedicationDispenseDispense $dispense)
     {
         $this->dispense->append($dispense);
     }
 
     /**
-     * @return FHIRSubstitution
+     * @return FHIRMedicationDispenseSubstitution
      */
     public function getSubstitution()
     {
@@ -132,9 +132,9 @@ class FHIRMedicationDispense extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRSubstitution $substitution
+     * @param FHIRMedicationDispenseSubstitution $substitution
      */
-    public function setSubstitution(FHIRSubstitution $substitution)
+    public function setSubstitution(FHIRMedicationDispenseSubstitution $substitution)
     {
         $this->substitution = $substitution;
     }

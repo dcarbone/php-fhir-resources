@@ -4,7 +4,7 @@ use FHIR\Common\Collection\ResourceComponentCollection;
 use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\FHIRPatient;
-use FHIR\Resources\Clinical\FamilyHistory\FHIRRelation;
+use FHIR\Resources\Clinical\FamilyHistory\FHIRFamilyHistoryRelation;
 
 /**
  * Class FHIRFamilyHistory
@@ -18,7 +18,7 @@ class FHIRFamilyHistory extends AbstractFHIRIdentifiableResource
     /** @var FHIRString */
     protected $note = null;
 
-    /** @var \FHIR\Resources\Clinical\FamilyHistory\FHIRRelation[]|ResourceComponentCollection */
+    /** @var \FHIR\Resources\Clinical\FamilyHistory\FHIRFamilyHistoryRelation[]|ResourceComponentCollection */
     protected $relation;
 
     /**
@@ -63,7 +63,7 @@ class FHIRFamilyHistory extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|\FHIR\Resources\Clinical\FamilyHistory\FHIRRelation[]
+     * @return ResourceComponentCollection|\FHIR\Resources\Clinical\FamilyHistory\FHIRFamilyHistoryRelation[]
      */
     public function getRelation()
     {
@@ -71,9 +71,9 @@ class FHIRFamilyHistory extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRRelation $relation
+     * @param FHIRFamilyHistoryRelation $relation
      */
-    public function addRelation(FHIRRelation $relation)
+    public function addRelation(FHIRFamilyHistoryRelation $relation)
     {
         $this->relation->append($relation);
     }
