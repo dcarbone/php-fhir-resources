@@ -3,7 +3,7 @@
 use FHIR\Common\AbstractFHIRObject;
 use FHIR\Common\Collection\ElementCollection;
 use FHIR\Elements\Complex\FHIRAddress;
-use FHIR\Elements\Complex\FHIRContact as FHIRContactElement;
+use FHIR\Elements\Complex\FHIRContact;
 use FHIR\Elements\Complex\FHIRCodeableConcept;
 use FHIR\Elements\Complex\FHIRHumanName;
 
@@ -19,7 +19,7 @@ class FHIROrganizationContact extends AbstractFHIRObject
     /** @var FHIRHumanName */
     protected $name = null;
 
-    /** @var FHIRContactElement[]|ElementCollection */
+    /** @var FHIRContact[]|ElementCollection */
     protected $telecom;
 
     /** @var FHIRAddress */
@@ -69,7 +69,7 @@ class FHIROrganizationContact extends AbstractFHIRObject
     }
 
     /**
-     * @return ElementCollection|FHIRContactElement[]
+     * @return ElementCollection|FHIRContact[]
      */
     public function getTelecom()
     {
@@ -77,9 +77,9 @@ class FHIROrganizationContact extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRContactElement $telecom
+     * @param FHIRContact $telecom
      */
-    public function addTelecom(FHIRContactElement $telecom)
+    public function addTelecom(FHIRContact $telecom)
     {
         $this->telecom->append($telecom);
     }

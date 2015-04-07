@@ -6,13 +6,14 @@ use FHIR\Common\Collection\ResourceComponentCollection;
 use FHIR\Elements\Complex\FHIRAddress;
 use FHIR\Elements\Complex\FHIRAttachment;
 use FHIR\Elements\Complex\FHIRCodeableConcept;
+use FHIR\Elements\Complex\FHIRContact;
 use FHIR\Elements\Complex\FHIRHumanName;
 use FHIR\Elements\Primitive\FHIRBoolean;
 use FHIR\Elements\Primitive\FHIRDateTime;
 use FHIR\Elements\Primitive\FHIRInteger;
 use FHIR\Resources\AbstractFHIRIdentifiableResource;
 use FHIR\Resources\Administrative\Patient\FHIRPatientAnimal;
-use FHIR\Resources\Administrative\Patient\FHIRContact;
+use FHIR\Resources\Administrative\Patient\FHIRPatientContact;
 use FHIR\Resources\Administrative\Patient\FHIRPatientLink;
 
 /**
@@ -66,7 +67,7 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     /** @var FHIRPatientLink[]|ResourceComponentCollection */
     protected $link;
 
-    /** @var FHIRContact[]|ResourceComponentCollection */
+    /** @var FHIRPatientContact[]|ResourceComponentCollection */
     protected $contact;
 
     /**
@@ -348,7 +349,7 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRContact[]
+     * @return ResourceComponentCollection|FHIRPatientContact[]
      */
     public function getContact()
     {
@@ -356,9 +357,9 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     }
 
     /**
-     * @param FHIRContact $contact
+     * @param FHIRPatientContact $contact
      */
-    public function addContact(FHIRContact $contact)
+    public function addContact(FHIRPatientContact $contact)
     {
         $this->contact->append($contact);
     }
