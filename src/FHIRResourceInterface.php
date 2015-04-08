@@ -44,7 +44,7 @@ interface FHIRResourceInterface extends FHIRObjectInterface
     /**
      * @return FHIRCode
      */
-    public function geLanguage();
+    public function getLanguage();
 
     /**
      * @param FHIRCode $language
