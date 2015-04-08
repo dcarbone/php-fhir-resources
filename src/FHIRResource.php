@@ -92,7 +92,7 @@ class FHIRResource extends AbstractFHIRObject implements FHIRResourceInterface
     /**
      * @return FHIRCode
      */
-    public function geLanguage()
+    public function getLanguage()
     {
         return $this->language;
     }
