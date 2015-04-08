@@ -1,21 +1,20 @@
 <?php namespace FHIR\Resources\Infrastructure;
 
 use FHIR\Common\Collection\ElementCollection;
+use FHIR\Common\Collection\ResourceComponentCollection;
 use FHIR\Elements\Complex\FHIRContact;
 use FHIR\Elements\Primitive\FHIRBoolean;
 use FHIR\Elements\Primitive\FHIRDateTime;
 use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\FHIRResource;
-use FHIR\Resources\Infrastructure\ValueSet\FHIRValueSetCompose;
-use FHIR\Resources\Infrastructure\ValueSet\FHIRValueSetDefine;
-use FHIR\Resources\Infrastructure\ValueSet\FHIRValueSetExpansion;
+use FHIR\Resources\Infrastructure\ConceptMap\FHIRConceptMapConcept;
 
 /**
- * Class FHIRValueSet
+ * Class FHIRConceptMap
  * @package FHIR\Resources\Infrastructure
  */
-class FHIRValueSet extends FHIRResource
+class FHIRConceptMap extends FHIRResource
 {
     /** @var FHIRString */
     protected $identifier = null;
@@ -32,32 +31,23 @@ class FHIRValueSet extends FHIRResource
     /** @var FHIRContact[]|ElementCollection */
     protected $telecom;
 
-    /** @var FHIRString */
-    protected $description = null;
-
-    /** @var FHIRString */
-    protected $copyright = null;
-
     /** @var FHIRCode */
     protected $status = null;
 
     /** @var FHIRBoolean */
     protected $experimental = null;
 
-    /** @var FHIRBoolean */
-    protected $extensible = null;
-
     /** @var FHIRDateTime */
     protected $date = null;
 
-    /** @var FHIRValueSetDefine */
-    protected $define = null;
+    /** @var FHIRValueSet */
+    protected $source = null;
 
-    /** @var FHIRValueSetExpansion */
-    protected $expansion = null;
+    /** @var FHIRValueSet */
+    protected $target = null;
 
-    /** @var FHIRValueSetCompose */
-    protected $compose = null;
+    /** @var FHIRConceptMapConcept[]|ResourceComponentCollection */
+    protected $concept;
 
     /**
      * Constructor
@@ -66,6 +56,7 @@ class FHIRValueSet extends FHIRResource
     {
         parent::__construct();
         $this->telecom = new ElementCollection();
+        $this->concept = new ResourceComponentCollection();
     }
 
     /**
@@ -149,38 +140,6 @@ class FHIRValueSet extends FHIRResource
     }
 
     /**
-     * @return FHIRString
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param FHIRString $description
-     */
-    public function setDescription(FHIRString $description)
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * @return FHIRString
-     */
-    public function getCopyright()
-    {
-        return $this->copyright;
-    }
-
-    /**
-     * @param FHIRString $copyright
-     */
-    public function setCopyright(FHIRString $copyright)
-    {
-        $this->copyright = $copyright;
-    }
-
-    /**
      * @return FHIRCode
      */
     public function getStatus()
@@ -213,22 +172,6 @@ class FHIRValueSet extends FHIRResource
     }
 
     /**
-     * @return FHIRBoolean
-     */
-    public function getExtensible()
-    {
-        return $this->extensible;
-    }
-
-    /**
-     * @param FHIRBoolean $extensible
-     */
-    public function setExtensible(FHIRBoolean $extensible)
-    {
-        $this->extensible = $extensible;
-    }
-
-    /**
      * @return FHIRDateTime
      */
     public function getDate()
@@ -245,50 +188,50 @@ class FHIRValueSet extends FHIRResource
     }
 
     /**
-     * @return FHIRValueSetDefine
+     * @return FHIRValueSet
      */
-    public function getDefine()
+    public function getSource()
     {
-        return $this->define;
+        return $this->source;
     }
 
     /**
-     * @param FHIRValueSetDefine $define
+     * @param FHIRValueSet $source
      */
-    public function setDefine(FHIRValueSetDefine $define)
+    public function setSource(FHIRValueSet $source)
     {
-        $this->define = $define;
+        $this->source = $source;
     }
 
     /**
-     * @return FHIRValueSetExpansion
+     * @return FHIRValueSet
      */
-    public function getExpansion()
+    public function getTarget()
     {
-        return $this->expansion;
+        return $this->target;
     }
 
     /**
-     * @param FHIRValueSetExpansion $expansion
+     * @param FHIRValueSet $target
      */
-    public function setExpansion(FHIRValueSetExpansion $expansion)
+    public function setTarget(FHIRValueSet $target)
     {
-        $this->expansion = $expansion;
+        $this->target = $target;
     }
 
     /**
-     * @return FHIRValueSetCompose
+     * @return ResourceComponentCollection|FHIRConceptMapConcept[]
      */
-    public function getCompose()
+    public function getConcept()
     {
-        return $this->compose;
+        return $this->concept;
     }
 
     /**
-     * @param FHIRValueSetCompose $compose
+     * @param FHIRConceptMapConcept $concept
      */
-    public function setCompose(FHIRValueSetCompose $compose)
+    public function addConcept(FHIRConceptMapConcept $concept)
     {
-        $this->compose = $compose;
+        $this->concept->append($concept);
     }
 }
