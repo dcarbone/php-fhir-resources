@@ -8,10 +8,10 @@ use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\Infrastructure\FHIRValueSet;
 
 /**
- * Class FHIRProfileBinding
+ * Class FHIRProfileStructureElementElementDefinitionBinding
  * @package FHIR\Resources\Infrastructure\Profile
  */
-class FHIRProfileBinding extends AbstractFHIRObject
+class FHIRProfileStructureElementElementDefinitionBinding extends AbstractFHIRObject
 {
     /** @var FHIRString */
     protected $name = null;

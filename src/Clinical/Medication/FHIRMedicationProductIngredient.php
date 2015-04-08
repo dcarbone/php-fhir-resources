@@ -6,10 +6,10 @@ use FHIR\Resources\Administrative\FHIRSubstance;
 use FHIR\Resources\Clinical\FHIRMedication;
 
 /**
- * Class FHIRMedicationIngredient
- * @package FHIR\Resources\Clinical
+ * Class FHIRMedicationProductIngredient
+ * @package FHIR\Resources\Clinical\Medication
  */
-class FHIRMedicationIngredient extends AbstractFHIRObject
+class FHIRMedicationProductIngredient extends AbstractFHIRObject
 {
     /** @var FHIRSubstance|FHIRMedication */
     protected $item = null;

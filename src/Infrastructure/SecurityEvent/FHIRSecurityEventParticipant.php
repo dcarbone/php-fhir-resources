@@ -37,7 +37,7 @@ class FHIRSecurityEventParticipant extends AbstractFHIRObject
     /** @var FHIRCoding */
     protected $media = null;
 
-    /** @var FHIRSecurityEventNetwork */
+    /** @var FHIRSecurityEventParticipantNetwork */
     protected $network = null;
 
     /**
@@ -173,7 +173,7 @@ class FHIRSecurityEventParticipant extends AbstractFHIRObject
     }
 
     /**
-     * @return FHIRSecurityEventNetwork
+     * @return FHIRSecurityEventParticipantNetwork
      */
     public function getNetwork()
     {
@@ -181,9 +181,9 @@ class FHIRSecurityEventParticipant extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRSecurityEventNetwork $network
+     * @param FHIRSecurityEventParticipantNetwork $network
      */
-    public function setNetwork(FHIRSecurityEventNetwork $network)
+    public function setNetwork(FHIRSecurityEventParticipantNetwork $network)
     {
         $this->network = $network;
     }

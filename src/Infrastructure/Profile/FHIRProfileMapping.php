@@ -23,9 +23,6 @@ class FHIRProfileMapping extends AbstractFHIRObject
     /** @var FHIRString */
     protected $comments = null;
 
-    /** @var FHIRString */
-    protected $map = null;
-
     /**
      * @return FHIRId
      */
@@ -88,21 +85,5 @@ class FHIRProfileMapping extends AbstractFHIRObject
     public function setComments(FHIRString $comments)
     {
         $this->comments = $comments;
-    }
-
-    /**
-     * @return FHIRString
-     */
-    public function getMap()
-    {
-        return $this->map;
-    }
-
-    /**
-     * @param FHIRString $map
-     */
-    public function setMap(FHIRString $map)
-    {
-        $this->map = $map;
     }
 }

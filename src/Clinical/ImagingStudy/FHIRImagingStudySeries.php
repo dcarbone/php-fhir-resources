@@ -43,7 +43,7 @@ class FHIRImagingStudySeries extends AbstractFHIRObject
     /** @var FHIRDateTime */
     protected $dateTime = null;
 
-    /** @var FHIRImagingStudyInstance[]|ResourceComponentCollection */
+    /** @var FHIRImagingStudySeriesInstance[]|ResourceComponentCollection */
     protected $instance;
 
     /**
@@ -199,7 +199,7 @@ class FHIRImagingStudySeries extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRImagingStudyInstance[]
+     * @return ResourceComponentCollection|FHIRImagingStudySeriesInstance[]
      */
     public function getInstance()
     {
@@ -207,9 +207,9 @@ class FHIRImagingStudySeries extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRImagingStudyInstance $instance
+     * @param FHIRImagingStudySeriesInstance $instance
      */
-    public function addInstance(FHIRImagingStudyInstance $instance)
+    public function addInstance(FHIRImagingStudySeriesInstance $instance)
     {
         $this->instance->append($instance);
     }

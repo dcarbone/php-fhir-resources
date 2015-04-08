@@ -36,7 +36,7 @@ class FHIRCarePlanActivity extends AbstractFHIRObject
     /** @var FHIRProcedure|FHIRMedicationPrescription|FHIRDiagnosticOrder|FHIREncounter */
     protected $detail = null;
 
-    /** @var FHIRCarePlanSimple */
+    /** @var FHIRCarePlanActivitySimple */
     protected $simple = null;
 
     /**
@@ -158,7 +158,7 @@ class FHIRCarePlanActivity extends AbstractFHIRObject
     }
 
     /**
-     * @return FHIRCarePlanSimple
+     * @return FHIRCarePlanActivitySimple
      */
     public function getSimple()
     {
@@ -166,9 +166,9 @@ class FHIRCarePlanActivity extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRCarePlanSimple $simple
+     * @param FHIRCarePlanActivitySimple $simple
      */
-    public function setSimple(FHIRCarePlanSimple $simple)
+    public function setSimple(FHIRCarePlanActivitySimple $simple)
     {
         $this->simple = $simple;
     }

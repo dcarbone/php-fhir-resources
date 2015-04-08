@@ -6,10 +6,10 @@ use FHIR\Elements\Primitive\FHIRUri;
 use FHIR\Elements\Simple\FHIRCode;
 
 /**
- * Class FHIRProfileTypeRef
+ * Class FHIRProfileStructureElementElementDefinitionTypeRef
  * @package FHIR\Resources\Infrastructure\Profile
  */
-class FHIRProfileTypeRef extends AbstractFHIRObject
+class FHIRProfileStructureElementElementDefinitionTypeRef extends AbstractFHIRObject
 {
     /** @var FHIRCode */
     protected $code = null;

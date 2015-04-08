@@ -83,7 +83,7 @@ class FHIRProcedureRelatedItem extends AbstractFHIRObject
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'target',
-                'FHIRAdverseReaction, FHIRAllergyIntolerance, FHIRCarePlan, FHIRFamilyHistoryCondition, FHIRDeviceObservationReport, '.
+                'FHIRAdverseReaction, FHIRAllergyIntolerance, FHIRCarePlan, FHIRCondition, FHIRDeviceObservationReport, '.
                 'FHIRDiagnosticReport, FHIRFamilyHistory, FHIRImagingStudy, FHIRImmunization, FHIRImmunizationRecommendation, '.
                 'FHIRMedicationAdministration, FHIRMedicationDispense, FHIRMedicationPrescription, FHIRMedicationStatement, '.
                 'FHIRObservation, or FHIRProcedure',

@@ -16,7 +16,7 @@ class FHIRProfileQuery extends AbstractFHIRObject
     /** @var FHIRString */
     protected $documentation = null;
 
-    /** @var FHIRProfileSearchParam[]|ResourceComponentCollection */
+    /** @var FHIRProfileQuerySearchParam[]|ResourceComponentCollection */
     protected $parameter;
 
     /**
@@ -60,7 +60,7 @@ class FHIRProfileQuery extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRProfileSearchParam[]
+     * @return ResourceComponentCollection|FHIRProfileQuerySearchParam[]
      */
     public function getParameter()
     {
@@ -68,9 +68,9 @@ class FHIRProfileQuery extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileSearchParam $parameter
+     * @param FHIRProfileQuerySearchParam $parameter
      */
-    public function addParameter(FHIRProfileSearchParam $parameter)
+    public function addParameter(FHIRProfileQuerySearchParam $parameter)
     {
         $this->parameter->append($parameter);
     }

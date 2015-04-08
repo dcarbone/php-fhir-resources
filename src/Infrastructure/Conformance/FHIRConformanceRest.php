@@ -22,13 +22,13 @@ class FHIRConformanceRest extends AbstractFHIRObject
     /** @var FHIRUri[]|ElementCollection */
     protected $documentMailbox;
 
-    /** @var FHIRConformanceOperation[]|ResourceComponentCollection */
+    /** @var FHIRConformanceRestOperation[]|ResourceComponentCollection */
     protected $operation;
 
-    /** @var FHIRConformanceResource[]|ResourceComponentCollection */
+    /** @var FHIRConformanceRestResource[]|ResourceComponentCollection */
     protected $resource;
 
-    /** @var FHIRConformanceSecurity */
+    /** @var FHIRConformanceRestSecurity */
     protected $security = null;
 
     /** @var FHIRConformanceQuery[]|ResourceComponentCollection */
@@ -94,7 +94,7 @@ class FHIRConformanceRest extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRConformanceOperation[]
+     * @return ResourceComponentCollection|FHIRConformanceRestOperation[]
      */
     public function getOperation()
     {
@@ -102,15 +102,15 @@ class FHIRConformanceRest extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConformanceOperation $operation
+     * @param FHIRConformanceRestOperation $operation
      */
-    public function addOperation(FHIRConformanceOperation $operation)
+    public function addOperation(FHIRConformanceRestOperation $operation)
     {
         $this->operation->append($operation);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRConformanceResource[]
+     * @return ResourceComponentCollection|FHIRConformanceRestResource[]
      */
     public function getResource()
     {
@@ -118,15 +118,15 @@ class FHIRConformanceRest extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConformanceResource $resource
+     * @param FHIRConformanceRestResource $resource
      */
-    public function setResource(FHIRConformanceResource $resource)
+    public function setResource(FHIRConformanceRestResource $resource)
     {
         $this->resource->append($resource);
     }
 
     /**
-     * @return FHIRConformanceSecurity
+     * @return FHIRConformanceRestSecurity
      */
     public function getSecurity()
     {
@@ -134,9 +134,9 @@ class FHIRConformanceRest extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConformanceSecurity $security
+     * @param FHIRConformanceRestSecurity $security
      */
-    public function setSecurity(FHIRConformanceSecurity $security)
+    public function setSecurity(FHIRConformanceRestSecurity $security)
     {
         $this->security = $security;
     }

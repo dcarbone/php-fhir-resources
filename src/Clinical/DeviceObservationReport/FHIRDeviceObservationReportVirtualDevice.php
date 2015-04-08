@@ -13,7 +13,7 @@ class FHIRDeviceObservationReportVirtualDevice extends AbstractFHIRObject
     /** @var FHIRCodeableConcept */
     protected $code = null;
 
-    /** @var FHIRDeviceObservationReportChannel[]|ResourceComponentCollection */
+    /** @var FHIRDeviceObservationReportVirtualDeviceChannel[]|ResourceComponentCollection */
     protected $channel;
 
     /**
@@ -41,7 +41,7 @@ class FHIRDeviceObservationReportVirtualDevice extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRDeviceObservationReportChannel[]
+     * @return ResourceComponentCollection|FHIRDeviceObservationReportVirtualDeviceChannel[]
      */
     public function getChannel()
     {
@@ -49,9 +49,9 @@ class FHIRDeviceObservationReportVirtualDevice extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRDeviceObservationReportChannel $channel
+     * @param FHIRDeviceObservationReportVirtualDeviceChannel $channel
      */
-    public function addChannel(FHIRDeviceObservationReportChannel $channel)
+    public function addChannel(FHIRDeviceObservationReportVirtualDeviceChannel $channel)
     {
         $this->channel->append($channel);
     }

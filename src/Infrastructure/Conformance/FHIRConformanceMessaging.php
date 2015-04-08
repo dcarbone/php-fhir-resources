@@ -21,7 +21,7 @@ class FHIRConformanceMessaging extends AbstractFHIRObject
     /** @var FHIRString */
     protected $documentation = null;
 
-    /** @var FHIRConformanceEvent[]|ResourceComponentCollection */
+    /** @var FHIRConformanceMessagingEvent[]|ResourceComponentCollection */
     protected $event;
 
     /**
@@ -81,7 +81,7 @@ class FHIRConformanceMessaging extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRConformanceEvent[]
+     * @return ResourceComponentCollection|FHIRConformanceMessagingEvent[]
      */
     public function getEvent()
     {
@@ -89,9 +89,9 @@ class FHIRConformanceMessaging extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConformanceEvent $event
+     * @param FHIRConformanceMessagingEvent $event
      */
-    public function addEvent(FHIRConformanceEvent $event)
+    public function addEvent(FHIRConformanceMessagingEvent $event)
     {
         $this->event->append($event);
     }

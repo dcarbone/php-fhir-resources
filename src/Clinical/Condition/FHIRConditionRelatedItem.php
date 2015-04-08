@@ -80,7 +80,7 @@ class FHIRConditionRelatedItem extends AbstractFHIRObject
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'target',
-                'FHIRFamilyHistoryCondition, FHIRImmunization, FHIRMedicationAdministration, FHIRMedicationStatement, or FHIRProcedure',
+                'FHIRCondition, FHIRImmunization, FHIRMedicationAdministration, FHIRMedicationStatement, or FHIRProcedure',
                 $target);
         }
     }

@@ -24,7 +24,7 @@ class FHIRQuestionnaireGroup extends AbstractFHIRObject
     /** @var FHIRResource */
     protected $subject = null;
 
-    /** @var FHIRQuestionnaireQuestion[]|ResourceComponentCollection */
+    /** @var FHIRQuestionnaireGroupQuestion[]|ResourceComponentCollection */
     protected $question;
 
     /** @var FHIRQuestionnaireGroup[]|ResourceComponentCollection */
@@ -104,7 +104,7 @@ class FHIRQuestionnaireGroup extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRQuestionnaireQuestion[]
+     * @return ResourceComponentCollection|FHIRQuestionnaireGroupQuestion[]
      */
     public function getQuestion()
     {
@@ -112,11 +112,11 @@ class FHIRQuestionnaireGroup extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRQuestionnaireQuestion $question
+     * @param FHIRQuestionnaireGroupQuestion $question
      */
-    public function addQuestion(FHIRQuestionnaireQuestion $question)
+    public function addQuestion(FHIRQuestionnaireGroupQuestion $question)
     {
-        $question->setGroup($this);
+        $question->addGroup($this);
         $this->question->append($question);
     }
 

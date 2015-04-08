@@ -5,10 +5,10 @@ use FHIR\Elements\Complex\FHIRQuantity;
 use FHIR\Resources\Clinical\FHIRMedication;
 
 /**
- * Class FHIRMedicationContent
- * @package FHIR\Resources\Clinical
+ * Class FHIRMedicationPackageContent
+ * @package FHIR\Resources\Clinical\Medication
  */
-class FHIRMedicationContent extends AbstractFHIRObject
+class FHIRMedicationPackageContent extends AbstractFHIRObject
 {
     /** @var FHIRMedication */
     protected $item = null;

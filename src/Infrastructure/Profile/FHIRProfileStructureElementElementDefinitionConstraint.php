@@ -1,37 +1,45 @@
 <?php namespace FHIR\Resources\Infrastructure\Profile;
 
 use FHIR\Common\AbstractFHIRObject;
-use FHIR\Common\Collection\ElementCollection;
 use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRCode;
+use FHIR\Elements\Simple\FHIRId;
 
 /**
- * Class FHIRProfileSearchParam
+ * Class FHIRProfileStructureElementElementDefinitionConstraint
  * @package FHIR\Resources\Infrastructure\Profile
  */
-class FHIRProfileSearchParam extends AbstractFHIRObject
+class FHIRProfileStructureElementElementDefinitionConstraint extends AbstractFHIRObject
 {
+    /** @var FHIRId */
+    protected $key = null;
+
     /** @var FHIRString */
     protected $name = null;
 
     /** @var FHIRCode */
-    protected $type = null;
+    protected $severity = null;
 
     /** @var FHIRString */
-    protected $documentation = null;
+    protected $human = null;
 
     /** @var FHIRString */
     protected $xpath = null;
 
-    /** @var FHIRCode[]|ElementCollection */
-    protected $target;
+    /**
+     * @return FHIRId
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
 
     /**
-     * Constructor
+     * @param FHIRId $key
      */
-    public function __construct()
+    public function setKey(FHIRId $key)
     {
-        $this->target = new ElementCollection();
+        $this->key = $key;
     }
 
     /**
@@ -53,33 +61,33 @@ class FHIRProfileSearchParam extends AbstractFHIRObject
     /**
      * @return FHIRCode
      */
-    public function getType()
+    public function getSeverity()
     {
-        return $this->type;
+        return $this->severity;
     }
 
     /**
-     * @param FHIRCode $type
+     * @param FHIRCode $severity
      */
-    public function setType(FHIRCode $type)
+    public function setSeverity(FHIRCode $severity)
     {
-        $this->type = $type;
+        $this->severity = $severity;
     }
 
     /**
      * @return FHIRString
      */
-    public function getDocumentation()
+    public function getHuman()
     {
-        return $this->documentation;
+        return $this->human;
     }
 
     /**
-     * @param FHIRString $documentation
+     * @param FHIRString $human
      */
-    public function setDocumentation(FHIRString $documentation)
+    public function setHuman(FHIRString $human)
     {
-        $this->documentation = $documentation;
+        $this->human = $human;
     }
 
     /**
@@ -96,21 +104,5 @@ class FHIRProfileSearchParam extends AbstractFHIRObject
     public function setXpath(FHIRString $xpath)
     {
         $this->xpath = $xpath;
-    }
-
-    /**
-     * @return ElementCollection|FHIRCode[]
-     */
-    public function getTarget()
-    {
-        return $this->target;
-    }
-
-    /**
-     * @param FHIRCode $target
-     */
-    public function addTarget(FHIRCode $target)
-    {
-        $this->target->append($target);
     }
 }

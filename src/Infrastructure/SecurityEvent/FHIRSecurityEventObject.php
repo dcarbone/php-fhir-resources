@@ -42,7 +42,7 @@ class FHIRSecurityEventObject extends AbstractFHIRObject
     /** @var FHIRBase64Binary */
     protected $query = null;
 
-    /** @var FHIRSecurityEventDetail[]|ResourceComponentCollection */
+    /** @var FHIRSecurityEventObjectDetail[]|ResourceComponentCollection */
     protected $detail;
 
     /**
@@ -198,7 +198,7 @@ class FHIRSecurityEventObject extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRSecurityEventDetail[]
+     * @return ResourceComponentCollection|FHIRSecurityEventObjectDetail[]
      */
     public function getDetail()
     {
@@ -206,9 +206,9 @@ class FHIRSecurityEventObject extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRSecurityEventDetail $detail
+     * @param FHIRSecurityEventObjectDetail $detail
      */
-    public function addDetail(FHIRSecurityEventDetail $detail)
+    public function addDetail(FHIRSecurityEventObjectDetail $detail)
     {
         $this->detail->append($detail);
     }

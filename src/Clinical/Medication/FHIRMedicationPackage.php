@@ -6,14 +6,14 @@ use FHIR\Elements\Complex\FHIRCodeableConcept;
 
 /**
  * Class FHIRMedicationPackage
- * @package FHIR\Resources\Clinical
+ * @package FHIR\Resources\Clinical\Medication
  */
 class FHIRMedicationPackage extends AbstractFHIRObject
 {
     /** @var FHIRCodeableConcept */
     protected $container = null;
 
-    /** @var FHIRMedicationContent[]|ResourceComponentCollection */
+    /** @var FHIRMedicationPackageContent[]|ResourceComponentCollection */
     protected $content;
 
     /**
@@ -41,7 +41,7 @@ class FHIRMedicationPackage extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRMedicationContent[]
+     * @return ResourceComponentCollection|FHIRMedicationPackageContent[]
      */
     public function getContent()
     {
@@ -49,9 +49,9 @@ class FHIRMedicationPackage extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRMedicationContent $content
+     * @param FHIRMedicationPackageContent $content
      */
-    public function addContent(FHIRMedicationContent $content)
+    public function addContent(FHIRMedicationPackageContent $content)
     {
         $this->content->append($content);
     }

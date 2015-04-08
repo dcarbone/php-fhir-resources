@@ -5,10 +5,10 @@ use FHIR\Elements\Complex\FHIRIdentifier;
 use FHIR\Elements\Simple\FHIRCode;
 
 /**
- * Class FHIRSecurityEventNetwork
+ * Class FHIRSecurityEventParticipantNetwork
  * @package FHIR\Resources\Infrastructure\SecurityEvent
  */
-class FHIRSecurityEventNetwork extends AbstractFHIRObject
+class FHIRSecurityEventParticipantNetwork extends AbstractFHIRObject
 {
     /** @var FHIRIdentifier */
     protected $identifier = null;

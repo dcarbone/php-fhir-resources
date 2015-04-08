@@ -5,10 +5,10 @@ use FHIR\Elements\Complex\FHIRPeriod;
 use FHIR\Resources\Administrative\FHIRLocation;
 
 /**
- * Class FHIREncounterAccomodation
+ * Class FHIREncounterHospitalizationAccomodation
  * @package FHIR\Resources\Administrative\Encounter
  */
-class FHIREncounterAccomodation extends AbstractFHIRObject
+class FHIREncounterHospitalizationAccomodation extends AbstractFHIRObject
 {
     /** @var FHIRLocation */
     protected $bed = null;

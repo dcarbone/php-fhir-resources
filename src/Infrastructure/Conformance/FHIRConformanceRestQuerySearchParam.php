@@ -7,10 +7,10 @@ use FHIR\Elements\Primitive\FHIRUri;
 use FHIR\Elements\Simple\FHIRCode;
 
 /**
- * Class FHIRConformanceSearchParam
+ * Class FHIRConformanceRestQuerySearchParam
  * @package FHIR\Resources\Infrastructure\Conformance
  */
-class FHIRConformanceSearchParam extends AbstractFHIRObject
+class FHIRConformanceRestQuerySearchParam extends AbstractFHIRObject
 {
     /** @var FHIRString */
     protected $name = null;

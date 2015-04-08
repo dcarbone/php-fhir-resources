@@ -8,10 +8,10 @@ use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\Infrastructure\FHIRProfile;
 
 /**
- * Class FHIRConformanceEvent
+ * Class FHIRConformanceMessagingEvent
  * @package FHIR\Resources\Infrastructure\Conformance
  */
-class FHIRConformanceEvent extends AbstractFHIRObject
+class FHIRConformanceMessagingEvent extends AbstractFHIRObject
 {
     /** @var FHIRCoding */
     protected $code = null;

@@ -9,10 +9,10 @@ use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Resources\Infrastructure\FHIRProfile;
 
 /**
- * Class FHIRConformanceResource
+ * Class FHIRConformanceRestResource
  * @package FHIR\Resources\Infrastructure\Conformance
  */
-class FHIRConformanceResource extends AbstractFHIRObject
+class FHIRConformanceRestResource extends AbstractFHIRObject
 {
     /** @var FHIRCode */
     protected $type = null;
@@ -29,10 +29,10 @@ class FHIRConformanceResource extends AbstractFHIRObject
     /** @var FHIRString[]|ElementCollection */
     protected $searchInclude;
 
-    /** @var FHIRConformanceOperation[]|ResourceComponentCollection */
+    /** @var FHIRConformanceRestResourceOperation[]|ResourceComponentCollection */
     protected $operation;
 
-    /** @var FHIRConformanceSearchParam[]|ResourceComponentCollection */
+    /** @var FHIRConformanceRestQuerySearchParam[]|ResourceComponentCollection */
     protected $searchParam;
 
     /**
@@ -126,7 +126,7 @@ class FHIRConformanceResource extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRConformanceOperation[]
+     * @return ResourceComponentCollection|FHIRConformanceRestResourceOperation[]
      */
     public function getOperation()
     {
@@ -134,15 +134,15 @@ class FHIRConformanceResource extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConformanceOperation $operation
+     * @param FHIRConformanceRestResourceOperation $operation
      */
-    public function addOperation(FHIRConformanceOperation $operation)
+    public function addOperation(FHIRConformanceRestResourceOperation $operation)
     {
         $this->operation->append($operation);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRConformanceSearchParam[]
+     * @return ResourceComponentCollection|FHIRConformanceRestQuerySearchParam[]
      */
     public function getSearchParam()
     {
@@ -150,9 +150,9 @@ class FHIRConformanceResource extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConformanceSearchParam $searchParam
+     * @param FHIRConformanceRestQuerySearchParam $searchParam
      */
-    public function addSearchParam(FHIRConformanceSearchParam $searchParam)
+    public function addSearchParam(FHIRConformanceRestQuerySearchParam $searchParam)
     {
         $this->searchParam->append($searchParam);
     }

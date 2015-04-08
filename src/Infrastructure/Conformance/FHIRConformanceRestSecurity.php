@@ -8,10 +8,10 @@ use FHIR\Elements\Primitive\FHIRBoolean;
 use FHIR\Elements\Primitive\FHIRString;
 
 /**
- * Class FHIRConformanceSecurity
+ * Class FHIRConformanceRestSecurity
  * @package FHIR\Resources\Infrastructure\Conformance
  */
-class FHIRConformanceSecurity extends AbstractFHIRObject
+class FHIRConformanceRestSecurity extends AbstractFHIRObject
 {
     /** @var FHIRBoolean */
     protected $cors = null;
@@ -22,7 +22,7 @@ class FHIRConformanceSecurity extends AbstractFHIRObject
     /** @var FHIRString */
     protected $description = null;
 
-    /** @var FHIRConformanceCertificate[]|ResourceComponentCollection */
+    /** @var FHIRConformanceRestSecurityCertificate[]|ResourceComponentCollection */
     protected $certificate;
 
     /**
@@ -83,7 +83,7 @@ class FHIRConformanceSecurity extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRConformanceCertificate[]
+     * @return ResourceComponentCollection|FHIRConformanceRestSecurityCertificate[]
      */
     public function getCertificate()
     {
@@ -91,9 +91,9 @@ class FHIRConformanceSecurity extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConformanceCertificate $certificate
+     * @param FHIRConformanceRestSecurityCertificate $certificate
      */
-    public function addCertificate(FHIRConformanceCertificate $certificate)
+    public function addCertificate(FHIRConformanceRestSecurityCertificate $certificate)
     {
         $this->certificate->append($certificate);
     }

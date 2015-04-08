@@ -6,10 +6,10 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Resources\Administrative\FHIROrganization;
 
 /**
- * Class FHIRImmunizationRecommendationProtocol
+ * Class FHIRImmunizationRecommendationRecommendationProtocol
  * @package FHIR\Resources\Clinical\ImmunizationRecommendation
  */
-class FHIRImmunizationRecommendationProtocol extends AbstractFHIRObject
+class FHIRImmunizationRecommendationRecommendationProtocol extends AbstractFHIRObject
 {
     /** @var FHIRInteger */
     protected $doseSequence = null;

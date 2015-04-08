@@ -31,7 +31,7 @@ class FHIRFamilyHistoryRelation extends AbstractFHIRObject
     /** @var FHIRString */
     protected $note = null;
 
-    /** @var FHIRFamilyHistoryCondition[]|ResourceComponentCollection */
+    /** @var FHIRFamilyHistoryRelationCondition[]|ResourceComponentCollection */
     protected $condition = null;
 
     /**
@@ -147,7 +147,7 @@ class FHIRFamilyHistoryRelation extends AbstractFHIRObject
     }
 
     /**
-     * @return FHIRFamilyHistoryCondition[]|ResourceComponentCollection
+     * @return FHIRFamilyHistoryRelationCondition[]|ResourceComponentCollection
      */
     public function getCondition()
     {
@@ -155,9 +155,9 @@ class FHIRFamilyHistoryRelation extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRFamilyHistoryCondition $condition
+     * @param FHIRFamilyHistoryRelationCondition $condition
      */
-    public function addCondition(FHIRFamilyHistoryCondition $condition)
+    public function addCondition(FHIRFamilyHistoryRelationCondition $condition)
     {
         $this->condition->append($condition);
     }

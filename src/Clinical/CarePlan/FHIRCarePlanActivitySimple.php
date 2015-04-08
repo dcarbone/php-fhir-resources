@@ -17,10 +17,10 @@ use FHIR\Resources\Administrative\FHIRSubstance;
 use FHIR\Resources\Clinical\FHIRMedication;
 
 /**
- * Class FHIRCarePlanSimple
+ * Class FHIRCarePlanActivitySimple
  * @package FHIR\Resources\Clinical\CarePlan
  */
-class FHIRCarePlanSimple extends AbstractFHIRObject
+class FHIRCarePlanActivitySimple extends AbstractFHIRObject
 {
     /** @var FHIRCode */
     protected $category = null;

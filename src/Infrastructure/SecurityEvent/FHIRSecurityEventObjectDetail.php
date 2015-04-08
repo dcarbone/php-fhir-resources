@@ -5,10 +5,10 @@ use FHIR\Elements\Primitive\FHIRBase64Binary;
 use FHIR\Elements\Primitive\FHIRString;
 
 /**
- * Class FHIRSecurityEventDetail
+ * Class FHIRSecurityEventObjectDetail
  * @package FHIR\Resources\Infrastructure\SecurityEvent
  */
-class FHIRSecurityEventDetail extends AbstractFHIRObject
+class FHIRSecurityEventObjectDetail extends AbstractFHIRObject
 {
     /** @var FHIRString */
     protected $type = null;

@@ -49,7 +49,7 @@ class FHIREncounterHospitalization extends AbstractFHIRObject
     /** @var FHIRBoolean */
     protected $reAdmission = null;
 
-    /** @var FHIREncounterAccomodation[]|ResourceComponentCollection */
+    /** @var FHIREncounterHospitalizationAccomodation[]|ResourceComponentCollection */
     protected $accomodation;
 
     /**
@@ -239,7 +239,7 @@ class FHIREncounterHospitalization extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIREncounterAccomodation[]
+     * @return ResourceComponentCollection|FHIREncounterHospitalizationAccomodation[]
      */
     public function getAccomodation()
     {
@@ -247,9 +247,9 @@ class FHIREncounterHospitalization extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIREncounterAccomodation $accomodation
+     * @param FHIREncounterHospitalizationAccomodation $accomodation
      */
-    public function addAccomodation(FHIREncounterAccomodation $accomodation)
+    public function addAccomodation(FHIREncounterHospitalizationAccomodation $accomodation)
     {
         $this->accomodation->append($accomodation);
     }

@@ -6,10 +6,10 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRCode;
 
 /**
- * Class FHIRProfileElement
+ * Class FHIRProfileStructureElement
  * @package FHIR\Resources\Infrastructure\Profile
  */
-class FHIRProfileElement extends AbstractFHIRObject
+class FHIRProfileStructureElement extends AbstractFHIRObject
 {
     /** @var FHIRString */
     protected $path = null;
@@ -20,10 +20,10 @@ class FHIRProfileElement extends AbstractFHIRObject
     /** @var FHIRString */
     protected $name = null;
 
-    /** @var FHIRProfileSlicing */
+    /** @var FHIRProfileStructureElementSlicing */
     protected $slicing = null;
 
-    /** @var FHIRProfileElementDefinition */
+    /** @var FHIRProfileStructureElementElementDefinition */
     protected $definition = null;
 
     /**
@@ -83,7 +83,7 @@ class FHIRProfileElement extends AbstractFHIRObject
     }
 
     /**
-     * @return FHIRProfileSlicing
+     * @return FHIRProfileStructureElementSlicing
      */
     public function getSlicing()
     {
@@ -91,15 +91,15 @@ class FHIRProfileElement extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileSlicing $slicing
+     * @param FHIRProfileStructureElementSlicing $slicing
      */
-    public function setSlicing(FHIRProfileSlicing $slicing)
+    public function setSlicing(FHIRProfileStructureElementSlicing $slicing)
     {
         $this->slicing = $slicing;
     }
 
     /**
-     * @return FHIRProfileElementDefinition
+     * @return FHIRProfileStructureElementElementDefinition
      */
     public function getDefinition()
     {
@@ -107,9 +107,9 @@ class FHIRProfileElement extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileElementDefinition $definition
+     * @param FHIRProfileStructureElementElementDefinition $definition
      */
-    public function setDefinition(FHIRProfileElementDefinition $definition)
+    public function setDefinition(FHIRProfileStructureElementElementDefinition $definition)
     {
         $this->definition = $definition;
     }

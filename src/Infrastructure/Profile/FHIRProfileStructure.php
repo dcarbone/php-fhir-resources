@@ -24,10 +24,10 @@ class FHIRProfileStructure extends AbstractFHIRObject
     /** @var FHIRString */
     protected $purpose = null;
 
-    /** @var FHIRProfileSearchParam[]|ResourceComponentCollection */
+    /** @var FHIRProfileQuerySearchParam[]|ResourceComponentCollection */
     protected $searchParam;
 
-    /** @var FHIRProfileElement[]|ResourceComponentCollection */
+    /** @var FHIRProfileStructureElement[]|ResourceComponentCollection */
     protected $element;
 
     /**
@@ -104,7 +104,7 @@ class FHIRProfileStructure extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRProfileSearchParam[]
+     * @return ResourceComponentCollection|FHIRProfileQuerySearchParam[]
      */
     public function getSearchParam()
     {
@@ -112,15 +112,15 @@ class FHIRProfileStructure extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileSearchParam $searchParam
+     * @param FHIRProfileQuerySearchParam $searchParam
      */
-    public function addSearchParam(FHIRProfileSearchParam $searchParam)
+    public function addSearchParam(FHIRProfileQuerySearchParam $searchParam)
     {
         $this->searchParam->append($searchParam);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRProfileElement[]
+     * @return ResourceComponentCollection|FHIRProfileStructureElement[]
      */
     public function getElement()
     {
@@ -128,9 +128,9 @@ class FHIRProfileStructure extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileElement $element
+     * @param FHIRProfileStructureElement $element
      */
-    public function addElement(FHIRProfileElement $element)
+    public function addElement(FHIRProfileStructureElement $element)
     {
         $this->element->append($element);
     }

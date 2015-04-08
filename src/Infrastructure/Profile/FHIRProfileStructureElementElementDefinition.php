@@ -9,10 +9,10 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRId;
 
 /**
- * Class FHIRProfileElementDefinition
+ * Class FHIRProfileStructureElementElementDefinition
  * @package FHIR\Resources\Infrastructure\Profile
  */
-class FHIRProfileElementDefinition extends AbstractFHIRObject
+class FHIRProfileStructureElementElementDefinition extends AbstractFHIRObject
 {
     /** @var FHIRString */
     protected $short = null;
@@ -56,16 +56,16 @@ class FHIRProfileElementDefinition extends AbstractFHIRObject
     /** @var FHIRBoolean */
     protected $isModifier = null;
 
-    /** @var FHIRProfileTypeRef[]|ResourceComponentCollection */
+    /** @var FHIRProfileStructureElementElementDefinitionTypeRef[]|ResourceComponentCollection */
     protected $type = null;
 
-    /** @var FHIRProfileMapping[]|ResourceComponentCollection */
+    /** @var FHIRProfileStructureElementElementDefinitionMapping[]|ResourceComponentCollection */
     protected $mapping;
 
-    /** @var FHIRProfileConstraint[]|ResourceComponentCollection */
+    /** @var FHIRProfileStructureElementElementDefinitionConstraint[]|ResourceComponentCollection */
     protected $constraint;
 
-    /** @var FHIRProfileBinding */
+    /** @var FHIRProfileStructureElementElementDefinitionBinding */
     protected $binding = null;
 
     /**
@@ -305,7 +305,7 @@ class FHIRProfileElementDefinition extends AbstractFHIRObject
     }
 
     /**
-     * @return FHIRProfileTypeRef[]|ResourceComponentCollection
+     * @return FHIRProfileStructureElementElementDefinitionTypeRef[]|ResourceComponentCollection
      */
     public function getType()
     {
@@ -313,15 +313,15 @@ class FHIRProfileElementDefinition extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileTypeRef $type
+     * @param FHIRProfileStructureElementElementDefinitionTypeRef $type
      */
-    public function addType(FHIRProfileTypeRef $type)
+    public function addType(FHIRProfileStructureElementElementDefinitionTypeRef $type)
     {
         $this->type->append($type);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRProfileMapping[]
+     * @return ResourceComponentCollection|FHIRProfileStructureElementElementDefinitionMapping[]
      */
     public function getMapping()
     {
@@ -329,15 +329,15 @@ class FHIRProfileElementDefinition extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileMapping $mapping
+     * @param FHIRProfileStructureElementElementDefinitionMapping $mapping
      */
-    public function addMapping(FHIRProfileMapping $mapping)
+    public function addMapping(FHIRProfileStructureElementElementDefinitionMapping $mapping)
     {
         $this->mapping->append($mapping);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRProfileConstraint[]
+     * @return ResourceComponentCollection|FHIRProfileStructureElementElementDefinitionConstraint[]
      */
     public function getConstraint()
     {
@@ -345,15 +345,15 @@ class FHIRProfileElementDefinition extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileConstraint $constraint
+     * @param FHIRProfileStructureElementElementDefinitionConstraint $constraint
      */
-    public function addConstraint(FHIRProfileConstraint $constraint)
+    public function addConstraint(FHIRProfileStructureElementElementDefinitionConstraint $constraint)
     {
         $this->constraint->append($constraint);
     }
 
     /**
-     * @return FHIRProfileBinding
+     * @return FHIRProfileStructureElementElementDefinitionBinding
      */
     public function getBinding()
     {
@@ -361,9 +361,9 @@ class FHIRProfileElementDefinition extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileBinding $binding
+     * @param FHIRProfileStructureElementElementDefinitionBinding $binding
      */
-    public function setBinding(FHIRProfileBinding $binding)
+    public function setBinding(FHIRProfileStructureElementElementDefinitionBinding $binding)
     {
         $this->binding = $binding;
     }

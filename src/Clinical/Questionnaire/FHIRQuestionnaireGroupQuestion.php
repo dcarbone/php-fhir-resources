@@ -1,7 +1,10 @@
 <?php namespace FHIR\Resources\Clinical\Questionnaire;
 
 use FHIR\Common\AbstractFHIRObject;
+use FHIR\Common\Collection\ElementCollection;
+use FHIR\Common\Collection\ResourceComponentCollection;
 use FHIR\Elements\Complex\FHIRCodeableConcept;
+use FHIR\Elements\Complex\FHIRCoding;
 use FHIR\Elements\Primitive\FHIRBoolean;
 use FHIR\Elements\Primitive\FHIRDate;
 use FHIR\Elements\Primitive\FHIRDateTime;
@@ -12,10 +15,10 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Resources\Infrastructure\FHIRValueSet;
 
 /**
- * Class FHIRQuestionnaireQuestion
+ * Class FHIRQuestionnaireGroupQuestion
  * @package FHIR\Resources\Clinical
  */
-class FHIRQuestionnaireQuestion extends AbstractFHIRObject
+class FHIRQuestionnaireGroupQuestion extends AbstractFHIRObject
 {
     /** @var FHIRCodeableConcept */
     protected $name = null;
@@ -26,7 +29,10 @@ class FHIRQuestionnaireQuestion extends AbstractFHIRObject
     /** @var FHIRDecimal|FHIRInteger|FHIRBoolean|FHIRDate|FHIRString|FHIRDateTime|FHIRInstant */
     protected $answer = null;
 
-    /** @var \FHIR\Resources\Infrastructure\FHIRValueSet */
+    /** @var FHIRCoding[]|ElementCollection */
+    protected $choice;
+
+    /** @var FHIRValueSet */
     protected $options = null;
 
     /** @var FHIRDate */
@@ -35,8 +41,17 @@ class FHIRQuestionnaireQuestion extends AbstractFHIRObject
     /** @var FHIRString */
     protected $remakes = null;
 
-    /** @var FHIRQuestionnaireGroup */
-    protected $group = null;
+    /** @var FHIRQuestionnaireGroup[]|ResourceComponentCollection */
+    protected $group;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->choice = new ElementCollection();
+        $this->group = new ResourceComponentCollection();
+    }
 
     /**
      * @return FHIRCodeableConcept
@@ -103,6 +118,22 @@ class FHIRQuestionnaireQuestion extends AbstractFHIRObject
     }
 
     /**
+     * @return ElementCollection|FHIRCoding[]
+     */
+    public function getChoice()
+    {
+        return $this->choice;
+    }
+
+    /**
+     * @param FHIRCoding $choice
+     */
+    public function addChoice(FHIRCoding $choice)
+    {
+        $this->choice->append($choice);
+    }
+
+    /**
      * @return \FHIR\Resources\Infrastructure\FHIRValueSet
      */
     public function getOptions()
@@ -151,7 +182,7 @@ class FHIRQuestionnaireQuestion extends AbstractFHIRObject
     }
 
     /**
-     * @return FHIRQuestionnaireGroup
+     * @return FHIRQuestionnaireGroup[]|ResourceComponentCollection
      */
     public function getGroup()
     {
@@ -161,8 +192,8 @@ class FHIRQuestionnaireQuestion extends AbstractFHIRObject
     /**
      * @param FHIRQuestionnaireGroup $group
      */
-    public function setGroup(FHIRQuestionnaireGroup $group)
+    public function addGroup(FHIRQuestionnaireGroup $group)
     {
-        $this->group = $group;
+        $this->group->append($group);
     }
 }

@@ -4,10 +4,10 @@ use FHIR\Common\AbstractFHIRObject;
 use FHIR\Resources\Clinical\FHIRObservation;
 
 /**
- * Class FHIRDeviceObservationReportMetric
+ * Class FHIRDeviceObservationReportVirtualDeviceChannelMetric
  * @package FHIR\Resources\Clinical\DeviceObservationReport
  */
-class FHIRDeviceObservationReportMetric extends AbstractFHIRObject
+class FHIRDeviceObservationReportVirtualDeviceChannelMetric extends AbstractFHIRObject
 {
     /** @var FHIRObservation */
     protected $observation = null;

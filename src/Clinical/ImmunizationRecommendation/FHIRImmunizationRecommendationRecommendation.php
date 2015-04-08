@@ -35,10 +35,10 @@ class FHIRImmunizationRecommendationRecommendation extends AbstractFHIRObject
     /** @var \FHIR\Resources\Clinical\FHIRObservation[]|FHIRAdverseReaction[]|FHIRAllergyIntolerance[]|ResourceCollection */
     protected $supportingPatientInformation;
 
-    /** @var FHIRImmunizationRecommendationProtocol[]|ResourceComponentCollection */
+    /** @var FHIRImmunizationRecommendationRecommendationProtocol[]|ResourceComponentCollection */
     protected $protocol;
 
-    /** @var FHIRImmunizationRecommendationDateCriterion[]|ResourceComponentCollection */
+    /** @var FHIRImmunizationRecommendationRecommendationDateCriterion[]|ResourceComponentCollection */
     protected $dateCriterion;
 
     /**
@@ -161,7 +161,7 @@ class FHIRImmunizationRecommendationRecommendation extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRImmunizationRecommendationProtocol[]
+     * @return ResourceComponentCollection|FHIRImmunizationRecommendationRecommendationProtocol[]
      */
     public function getProtocol()
     {
@@ -169,15 +169,15 @@ class FHIRImmunizationRecommendationRecommendation extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRImmunizationRecommendationProtocol $protocol
+     * @param FHIRImmunizationRecommendationRecommendationProtocol $protocol
      */
-    public function addProtocol(FHIRImmunizationRecommendationProtocol $protocol)
+    public function addProtocol(FHIRImmunizationRecommendationRecommendationProtocol $protocol)
     {
         $this->protocol->append($protocol);
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRImmunizationRecommendationDateCriterion[]
+     * @return ResourceComponentCollection|FHIRImmunizationRecommendationRecommendationDateCriterion[]
      */
     public function getDateCriterion()
     {
@@ -185,9 +185,9 @@ class FHIRImmunizationRecommendationRecommendation extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRImmunizationRecommendationDateCriterion $dateCriterion
+     * @param FHIRImmunizationRecommendationRecommendationDateCriterion $dateCriterion
      */
-    public function addDateCriterion(FHIRImmunizationRecommendationDateCriterion $dateCriterion)
+    public function addDateCriterion(FHIRImmunizationRecommendationRecommendationDateCriterion $dateCriterion)
     {
         $this->dateCriterion->append($dateCriterion);
     }

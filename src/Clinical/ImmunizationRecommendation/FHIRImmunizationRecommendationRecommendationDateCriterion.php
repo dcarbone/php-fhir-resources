@@ -5,10 +5,10 @@ use FHIR\Elements\Complex\FHIRCodeableConcept;
 use FHIR\Elements\Primitive\FHIRDateTime;
 
 /**
- * Class FHIRImmunizationRecommendationDateCriterion
+ * Class FHIRImmunizationRecommendationRecommendationDateCriterion
  * @package FHIR\Resources\Clinical\ImmunizationRecommendation
  */
-class FHIRImmunizationRecommendationDateCriterion extends AbstractFHIRObject
+class FHIRImmunizationRecommendationRecommendationDateCriterion extends AbstractFHIRObject
 {
     /** @var FHIRCodeableConcept */
     protected $code = null;

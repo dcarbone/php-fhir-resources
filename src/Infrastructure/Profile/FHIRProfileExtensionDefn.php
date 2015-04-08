@@ -23,7 +23,7 @@ class FHIRProfileExtensionDefn extends AbstractFHIRObject
     /** @var FHIRString[]|ElementCollection */
     protected $context;
 
-    /** @var FHIRProfileElementDefinition */
+    /** @var FHIRProfileStructureElementElementDefinition */
     protected $definition = null;
 
     /**
@@ -99,7 +99,7 @@ class FHIRProfileExtensionDefn extends AbstractFHIRObject
     }
 
     /**
-     * @return FHIRProfileElementDefinition
+     * @return FHIRProfileStructureElementElementDefinition
      */
     public function getDefinition()
     {
@@ -107,9 +107,9 @@ class FHIRProfileExtensionDefn extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRProfileElementDefinition $definition
+     * @param FHIRProfileStructureElementElementDefinition $definition
      */
-    public function setDefinition(FHIRProfileElementDefinition $definition)
+    public function setDefinition(FHIRProfileStructureElementElementDefinition $definition)
     {
         $this->definition = $definition;
     }

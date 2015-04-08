@@ -13,7 +13,7 @@ use FHIR\Elements\Primitive\FHIRDateTime;
  * Class FHIRMedicationDosage
  * @package FHIR\Resources\Clinical\MedicationDispense
  */
-class FHIRMedicationDispenseDosage extends AbstractFHIRObject
+class FHIRMedicationDispenseDispenseDosage extends AbstractFHIRObject
 {
     /** @var FHIRCodeableConcept */
     protected $additionalInstructions = null;

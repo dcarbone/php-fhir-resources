@@ -17,7 +17,7 @@ class FHIRDocumentReferenceService extends AbstractFHIRObject
     /** @var FHIRString */
     protected $address = null;
 
-    /** @var FHIRDocumentReferenceParameter[]|ResourceComponentCollection */
+    /** @var FHIRDocumentReferenceServiceParameter[]|ResourceComponentCollection */
     protected $parameter;
 
     /**
@@ -61,7 +61,7 @@ class FHIRDocumentReferenceService extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRDocumentReferenceParameter[]
+     * @return ResourceComponentCollection|FHIRDocumentReferenceServiceParameter[]
      */
     public function getParameter()
     {
@@ -69,9 +69,9 @@ class FHIRDocumentReferenceService extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRDocumentReferenceParameter $parameter
+     * @param FHIRDocumentReferenceServiceParameter $parameter
      */
-    public function addParameter(FHIRDocumentReferenceParameter $parameter)
+    public function addParameter(FHIRDocumentReferenceServiceParameter $parameter)
     {
         $this->parameter->append($parameter);
     }

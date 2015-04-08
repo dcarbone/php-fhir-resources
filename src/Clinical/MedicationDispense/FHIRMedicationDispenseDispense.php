@@ -47,7 +47,7 @@ class FHIRMedicationDispenseDispense extends AbstractFHIRObject
     /** @var \FHIR\Resources\Administrative\FHIRPatient[]|\FHIR\Resources\Administrative\FHIRPractitioner[]|ResourceCollection */
     protected $receiver;
 
-    /** @var FHIRMedicationDispenseDosage[]|ResourceComponentCollection */
+    /** @var FHIRMedicationDispenseDispenseDosage[]|ResourceComponentCollection */
     protected $dosage;
 
     /**
@@ -208,7 +208,7 @@ class FHIRMedicationDispenseDispense extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRMedicationDispenseDosage[]
+     * @return ResourceComponentCollection|FHIRMedicationDispenseDispenseDosage[]
      */
     public function getDosage()
     {
@@ -216,9 +216,9 @@ class FHIRMedicationDispenseDispense extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRMedicationDispenseDosage $dosage
+     * @param FHIRMedicationDispenseDispenseDosage $dosage
      */
-    public function addDosage(FHIRMedicationDispenseDosage $dosage)
+    public function addDosage(FHIRMedicationDispenseDispenseDosage $dosage)
     {
         $this->dosage->append($dosage);
     }

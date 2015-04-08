@@ -7,10 +7,10 @@ use FHIR\Elements\Complex\Quantity\FHIRAge;
 use FHIR\Elements\Primitive\FHIRString;
 
 /**
- * Class FHIRFamilyHistoryCondition
+ * Class FHIRFamilyHistoryRelationCondition
  * @package FHIR\Resources\Clinical
  */
-class FHIRFamilyHistoryCondition extends AbstractFHIRObject
+class FHIRFamilyHistoryRelationCondition extends AbstractFHIRObject
 {
     /** @var FHIRCodeableConcept */
     protected $type = null;

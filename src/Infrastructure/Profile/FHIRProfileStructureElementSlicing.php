@@ -6,10 +6,10 @@ use FHIR\Elements\Simple\FHIRCode;
 use FHIR\Elements\Simple\FHIRId;
 
 /**
- * Class FHIRProfileSlicing
+ * Class FHIRProfileStructureElementSlicing
  * @package FHIR\Resources\Infrastructure\Profile
  */
-class FHIRProfileSlicing extends AbstractFHIRObject
+class FHIRProfileStructureElementSlicing extends AbstractFHIRObject
 {
     /** @var FHIRId */
     protected $discriminator = null;

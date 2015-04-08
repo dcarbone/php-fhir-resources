@@ -4,10 +4,10 @@ use FHIR\Common\AbstractFHIRObject;
 use FHIR\Elements\Primitive\FHIRString;
 
 /**
- * Class FHIRDocumentReferenceParameter
+ * Class FHIRDocumentReferenceServiceParameter
  * @package FHIR\Resources\Infrastructure\DocumentReference
  */
-class FHIRDocumentReferenceParameter extends AbstractFHIRObject
+class FHIRDocumentReferenceServiceParameter extends AbstractFHIRObject
 {
     /** @var FHIRString */
     protected $name = null;

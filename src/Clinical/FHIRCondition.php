@@ -17,7 +17,7 @@ use FHIR\Resources\Clinical\Condition\FHIRConditionStage;
 use FHIR\Resources\Administrative\FHIREncounter;
 
 /**
- * Class FHIRFamilyHistoryCondition
+ * Class FHIRCondition
  * @package FHIR\Resources\Clinical
  */
 class FHIRCondition extends AbstractFHIRIdentifiableResource

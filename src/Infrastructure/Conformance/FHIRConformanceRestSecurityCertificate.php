@@ -5,10 +5,10 @@ use FHIR\Elements\Primitive\FHIRBase64Binary;
 use FHIR\Elements\Simple\FHIRCode;
 
 /**
- * Class FHIRConformanceCertificate
+ * Class FHIRConformanceRestSecurityCertificate
  * @package FHIR\Resources\Infrastructure\Conformance
  */
-class FHIRConformanceCertificate extends AbstractFHIRObject
+class FHIRConformanceRestSecurityCertificate extends AbstractFHIRObject
 {
     /** @var FHIRCode */
     protected $type = null;

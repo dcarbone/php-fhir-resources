@@ -5,10 +5,10 @@ use FHIR\Elements\Primitive\FHIRString;
 use FHIR\Elements\Simple\FHIRCode;
 
 /**
- * Class FHIRConformanceOperation
+ * Class FHIRConformanceRestOperation
  * @package FHIR\Resources\Infrastructure\Conformance
  */
-class FHIRConformanceOperation extends AbstractFHIRObject
+class FHIRConformanceRestOperation extends AbstractFHIRObject
 {
     /** @var FHIRCode */
     protected $code = null;

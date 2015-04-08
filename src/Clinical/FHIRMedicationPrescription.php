@@ -27,7 +27,7 @@ class FHIRMedicationPrescription extends FHIRResource
     /** @var FHIRPatient */
     protected $patient = null;
 
-    /** @var \FHIR\Resources\Administrative\FHIRPractitioner */
+    /** @var FHIRPractitioner */
     protected $prescriber = null;
 
     /** @var FHIREncounter */
@@ -98,7 +98,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param \FHIR\Resources\Administrative\FHIRPatient $patient
+     * @param FHIRPatient $patient
      */
     public function setPatient(FHIRPatient $patient)
     {
@@ -114,7 +114,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param \FHIR\Resources\Administrative\FHIRPractitioner $prescriber
+     * @param FHIRPractitioner $prescriber
      */
     public function setPrescriber(FHIRPractitioner $prescriber)
     {
@@ -122,7 +122,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @return \FHIR\Resources\Administrative\FHIREncounter
+     * @return FHIREncounter
      */
     public function getEncounter()
     {
@@ -130,7 +130,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param \FHIR\Resources\Administrative\FHIREncounter $encounter
+     * @param FHIREncounter $encounter
      */
     public function setEncounter(FHIREncounter $encounter)
     {
@@ -138,7 +138,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @return FHIRCodeableConcept|\FHIR\Resources\Clinical\FamilyHistory\FHIRFamilyHistoryCondition
+     * @return FHIRCodeableConcept|FHIRCondition
      */
     public function getReason()
     {
@@ -146,7 +146,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param FHIRCodeableConcept|\FHIR\Resources\Clinical\FamilyHistory\FHIRFamilyHistoryCondition $reason
+     * @param FHIRCodeableConcept|FHIRCondition $reason
      */
     public function setReason($reason)
     {
@@ -159,7 +159,7 @@ class FHIRMedicationPrescription extends FHIRResource
         {
             throw $this->createInvalidPropertyValueTypeException(
                 'reason',
-                'FHIRCodeableConcept or FHIRFamilyHistoryCondition',
+                'FHIRCodeableConcept or FHIRCondition',
                 $reason
             );
         }
@@ -222,7 +222,7 @@ class FHIRMedicationPrescription extends FHIRResource
     }
 
     /**
-     * @param \FHIR\Resources\Clinical\MedicationPrescription\FHIRMedicationPrescriptionDispense $dispense
+     * @param FHIRMedicationPrescriptionDispense $dispense
      */
     public function setDispense(FHIRMedicationPrescriptionDispense $dispense)
     {

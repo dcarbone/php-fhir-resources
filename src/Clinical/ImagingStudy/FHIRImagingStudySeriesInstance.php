@@ -8,10 +8,10 @@ use FHIR\Elements\Simple\FHIROid;
 use FHIR\Resources\FHIRResourceInterface;
 
 /**
- * Class FHIRImagingStudyInstance
+ * Class FHIRImagingStudySeriesInstance
  * @package FHIR\Resources\Clinical\ImagingStudy
  */
-class FHIRImagingStudyInstance extends AbstractFHIRObject
+class FHIRImagingStudySeriesInstance extends AbstractFHIRObject
 {
     /** @var FHIRInteger */
     protected $number = null;

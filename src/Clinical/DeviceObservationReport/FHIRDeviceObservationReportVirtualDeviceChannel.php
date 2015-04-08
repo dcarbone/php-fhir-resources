@@ -5,15 +5,15 @@ use FHIR\Common\Collection\ResourceComponentCollection;
 use FHIR\Elements\Complex\FHIRCodeableConcept;
 
 /**
- * Class FHIRDeviceObservationReportChannel
+ * Class FHIRDeviceObservationReportVirtualDeviceChannel
  * @package FHIR\Resources\Clinical\DeviceObservationReport
  */
-class FHIRDeviceObservationReportChannel extends AbstractFHIRObject
+class FHIRDeviceObservationReportVirtualDeviceChannel extends AbstractFHIRObject
 {
     /** @var FHIRCodeableConcept */
     protected $code = null;
 
-    /** @var FHIRDeviceObservationReportMetric[]|ResourceComponentCollection */
+    /** @var FHIRDeviceObservationReportVirtualDeviceChannelMetric[]|ResourceComponentCollection */
     protected $metric;
 
     /**
@@ -41,7 +41,7 @@ class FHIRDeviceObservationReportChannel extends AbstractFHIRObject
     }
 
     /**
-     * @return ResourceComponentCollection|FHIRDeviceObservationReportMetric[]
+     * @return ResourceComponentCollection|FHIRDeviceObservationReportVirtualDeviceChannelMetric[]
      */
     public function getMetric()
     {
@@ -49,9 +49,9 @@ class FHIRDeviceObservationReportChannel extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRDeviceObservationReportMetric $metric
+     * @param FHIRDeviceObservationReportVirtualDeviceChannelMetric $metric
      */
-    public function addMetric(FHIRDeviceObservationReportMetric $metric)
+    public function addMetric(FHIRDeviceObservationReportVirtualDeviceChannelMetric $metric)
     {
         $this->metric->append($metric);
     }
