@@ -59,7 +59,7 @@ class FHIRCarePlanActivity extends AbstractFHIRObject
     /**
      * @param FHIRCarePlanGoal $goal
      */
-    public function setGoal(FHIRCarePlanGoal $goal)
+    public function addGoal(FHIRCarePlanGoal $goal)
     {
         $this->goal->append($goal);
     }
@@ -107,7 +107,7 @@ class FHIRCarePlanActivity extends AbstractFHIRObject
     /**
      * @param FHIRResource $actionResulting
      */
-    public function setActionResulting(FHIRResource $actionResulting)
+    public function addActionResulting(FHIRResource $actionResulting)
     {
         $this->actionResulting->append($actionResulting);
     }

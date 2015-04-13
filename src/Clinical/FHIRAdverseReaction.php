@@ -137,7 +137,7 @@ class FHIRAdverseReaction extends AbstractFHIRIdentifiableResource
     /**
      * @param FHIRAdverseReactionExposure $exposure
      */
-    public function setExposure(FHIRAdverseReactionExposure $exposure)
+    public function addExposure(FHIRAdverseReactionExposure $exposure)
     {
         $this->exposure->append($exposure);
     }
