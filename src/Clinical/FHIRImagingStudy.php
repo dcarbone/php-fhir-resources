@@ -284,7 +284,7 @@ class FHIRImagingStudy extends AbstractFHIRIdentifiableResource
     /**
      * @param FHIRCoding $procedure
      */
-    public function setProcedure(FHIRCoding $procedure)
+    public function addProcedure(FHIRCoding $procedure)
     {
         $this->procedure->append($procedure);
     }

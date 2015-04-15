@@ -120,7 +120,7 @@ class FHIRConformanceRest extends AbstractFHIRObject
     /**
      * @param FHIRConformanceRestResource $resource
      */
-    public function setResource(FHIRConformanceRestResource $resource)
+    public function addResource(FHIRConformanceRestResource $resource)
     {
         $this->resource->append($resource);
     }

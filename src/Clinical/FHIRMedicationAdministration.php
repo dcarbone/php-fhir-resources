@@ -233,8 +233,8 @@ class FHIRMedicationAdministration extends AbstractFHIRIdentifiableResource
     /**
      * @param FHIRMedicationDosage $dosage
      */
-    public function setDosage(FHIRMedicationDosage $dosage)
+    public function addDosage(FHIRMedicationDosage $dosage)
     {
-        $this->dosage = $dosage;
+        $this->dosage->append($dosage);
     }
 }

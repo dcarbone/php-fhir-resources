@@ -194,7 +194,7 @@ class FHIRProcedure extends AbstractFHIRIdentifiableResource
     /**
      * @param FHIRDiagnosticReport $report
      */
-    public function setReport(FHIRDiagnosticReport $report)
+    public function addReport(FHIRDiagnosticReport $report)
     {
         $this->report->append($report);
     }

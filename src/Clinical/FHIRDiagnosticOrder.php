@@ -171,6 +171,14 @@ class FHIRDiagnosticOrder extends FHIRIdentifier
     }
 
     /**
+     * @param FHIRDiagnosticOrderItem $item
+     */
+    public function addItem(FHIRDiagnosticOrderItem $item)
+    {
+        $this->item->append($item);
+    }
+
+    /**
      * @return ResourceComponentCollection|FHIRDiagnosticOrderEvent[]
      */
     public function getEvent()
@@ -179,13 +187,10 @@ class FHIRDiagnosticOrder extends FHIRIdentifier
     }
 
     /**
-     * @param FHIRDiagnosticOrderItem $item
      * @param FHIRDiagnosticOrderEvent $event
      */
-    public function addItemWithEvent(FHIRDiagnosticOrderItem $item, FHIRDiagnosticOrderEvent $event)
+    public function addEvent(FHIRDiagnosticOrderEvent $event)
     {
-        $item->addEvent($event);
-        $this->item->append($item);
         $this->event->append($event);
     }
 }

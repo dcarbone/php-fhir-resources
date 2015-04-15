@@ -180,6 +180,14 @@ class FHIRProvenance extends FHIRResource
     }
 
     /**
+     * @param FHIRProvenanceAgent $agent
+     */
+    public function addAgent(FHIRProvenanceAgent $agent)
+    {
+        $this->agent->append($agent);
+    }
+
+    /**
      * @return ResourceComponentCollection|FHIRProvenanceEntity[]
      */
     public function getEntity()
@@ -189,11 +197,9 @@ class FHIRProvenance extends FHIRResource
 
     /**
      * @param FHIRProvenanceEntity $entity
-     * @param FHIRProvenanceAgent $agent
      */
-    public function addEntityAndAgent(FHIRProvenanceEntity $entity, FHIRProvenanceAgent $agent)
+    public function addEntity(FHIRProvenanceEntity $entity)
     {
-        $entity->setAgent($agent);
         $this->entity->append($entity);
     }
 }

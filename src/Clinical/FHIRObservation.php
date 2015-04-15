@@ -363,7 +363,7 @@ class FHIRObservation extends AbstractFHIRIdentifiableResource
     /**
      * @param FHIRObservationReferenceRange $referenceRange
      */
-    public function setReferenceRange(FHIRObservationReferenceRange $referenceRange)
+    public function addReferenceRange(FHIRObservationReferenceRange $referenceRange)
     {
         $this->referenceRange->append($referenceRange);
     }

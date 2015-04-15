@@ -73,6 +73,14 @@ class FHIRConceptMapConcept extends AbstractFHIRObject
     }
 
     /**
+     * @param FHIRConceptMapConceptMap $map
+     */
+    public function addMap(FHIRConceptMapConceptMap $map)
+    {
+        $this->map->append($map);
+    }
+
+    /**
      * @return ResourceComponentCollection|FHIRConceptMapConceptOtherConcept[]
      */
     public function getDependsOn()
@@ -81,13 +89,10 @@ class FHIRConceptMapConcept extends AbstractFHIRObject
     }
 
     /**
-     * @param FHIRConceptMapConceptMap $map
      * @param FHIRConceptMapConceptOtherConcept $dependsOn
      */
-    public function addMapAndDependsOn(FHIRConceptMapConceptMap $map, FHIRConceptMapConceptOtherConcept $dependsOn)
+    public function addDependsOn(FHIRConceptMapConceptOtherConcept $dependsOn)
     {
-        $map->addProduct($dependsOn);
         $this->dependsOn->append($dependsOn);
-        $this->map->append($map);
     }
 }

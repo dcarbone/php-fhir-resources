@@ -357,7 +357,7 @@ class FHIRDocumentReference extends AbstractFHIRIdentifiableResource
     /**
      * @param FHIRCodeableConcept $confidentiality
      */
-    public function adConfidentiality(FHIRCodeableConcept $confidentiality)
+    public function addConfidentiality(FHIRCodeableConcept $confidentiality)
     {
         $this->confidentiality->append($confidentiality);
     }
