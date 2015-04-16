@@ -93,7 +93,7 @@ class FHIRValueSetComposeConceptSet extends AbstractFHIRObject
     /**
      * @param FHIRValueSetComposeConceptSetFilter $filter
      */
-    public function setFilter(FHIRValueSetComposeConceptSetFilter $filter)
+    public function addFilter(FHIRValueSetComposeConceptSetFilter $filter)
     {
         $this->filter->append($filter);
     }

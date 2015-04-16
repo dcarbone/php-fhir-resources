@@ -14,7 +14,7 @@ use FHIR\Elements\Simple\FHIRCode;
 class FHIRResource extends AbstractFHIRObject implements FHIRResourceInterface
 {
     /** @var string */
-    protected $_id = null;
+    protected $id = null;
 
     /** @var FHIRExtensionInterface[]|ExtensionCollection */
     protected $extension;
@@ -42,19 +42,19 @@ class FHIRResource extends AbstractFHIRObject implements FHIRResourceInterface
     }
 
     /**
-     * @param string $_id
+     * @param string $id
      */
-    public function _setId($_id)
+    public function setId($id)
     {
-        $this->_id = $_id;
+        $this->id = $id;
     }
 
     /**
      * @return string
      */
-    public function _getId()
+    public function getId()
     {
-        return $this->_id;
+        return $this->id;
     }
 
     /**

@@ -49,6 +49,7 @@ class FHIROrganization extends AbstractFHIRIdentifiableResource
         parent::__construct();
         $this->telecom = new ElementCollection();
         $this->location = new ResourceCollection();
+        $this->address = new ElementCollection();
         $this->contact = new ResourceComponentCollection();
     }
 

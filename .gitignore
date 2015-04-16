@@ -54,3 +54,5 @@ crashlytics.properties
 crashlytics-build.properties
 
 composer.lock
+
+tests

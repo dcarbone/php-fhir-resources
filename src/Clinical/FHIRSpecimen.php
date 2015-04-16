@@ -52,6 +52,7 @@ class FHIRSpecimen extends AbstractFHIRIdentifiableResource
         parent::__construct();
         $this->treatment = new ResourceComponentCollection();
         $this->container = new ResourceComponentCollection();
+        $this->source = new ResourceComponentCollection();
     }
 
     /**

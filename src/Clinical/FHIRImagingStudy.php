@@ -79,6 +79,7 @@ class FHIRImagingStudy extends AbstractFHIRIdentifiableResource
         $this->order = new ResourceCollection();
         $this->modality = new ElementCollection();
         $this->series = new ResourceComponentCollection();
+        $this->procedure = new ElementCollection();
     }
 
     /**

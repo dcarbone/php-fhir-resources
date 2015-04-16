@@ -14,12 +14,12 @@ interface FHIRResourceInterface extends FHIRObjectInterface
     /**
      * @return string
      */
-    public function _getId();
+    public function getId();
 
     /**
      * @param string $id
      */
-    public function _setId($id);
+    public function setId($id);
 
     /**
      * @return FHIRExtensionInterface[]|\FHIR\Common\Collection\ExtensionCollection

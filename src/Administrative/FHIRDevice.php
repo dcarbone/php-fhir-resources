@@ -57,6 +57,7 @@ class FHIRDevice extends AbstractFHIRIdentifiableResource
     {
         parent::__construct();
         $this->url = new ElementCollection();
+        $this->contact = new ElementCollection();
     }
 
     /**

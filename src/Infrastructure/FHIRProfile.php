@@ -80,6 +80,7 @@ class FHIRProfile extends FHIRResource
         $this->mapping = new ResourceComponentCollection();
         $this->query = new ResourceComponentCollection();
         $this->structure = new ResourceComponentCollection();
+        $this->code = new ElementCollection();
     }
 
     /**

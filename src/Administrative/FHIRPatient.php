@@ -76,6 +76,7 @@ class FHIRPatient extends AbstractFHIRIdentifiableResource
     public function __construct()
     {
         parent::__construct();
+        $this->name = new ElementCollection();
         $this->telecom = new ElementCollection();
         $this->address = new ElementCollection();
         $this->photo = new ElementCollection();
